@@ -52,7 +52,7 @@ Thumbs.db
 separated/
 
 # Optional: local model / checkpoint dumps (uncomment if you store these in-repo)
-# *.pt
-# *.pth
-# *.ckpt
-# checkpoints/
+*.pt
+*.pth
+*.ckpt
+checkpoints/
