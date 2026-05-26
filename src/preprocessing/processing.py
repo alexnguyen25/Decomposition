@@ -11,10 +11,13 @@ validation (see ``validation.py``) so inputs are known-good WAV paths.
 import os
 
 import librosa
+import numpy as np
 import soundfile as sf
+from pathlib import Path
 
 
-def process_audio(file_path):
+
+def process_audio(file_path: Path) -> str:
     """
     Load an audio file, normalize sample rate and channel layout, and save a processed copy.
 
@@ -51,7 +54,7 @@ def process_audio(file_path):
     return new_file_path
 
 
-def normalizeSampleRate(y, sr):
+def normalizeSampleRate(y, sr) -> np.ndarray:
     """
     Resample a waveform to 44.1 kHz when the native rate differs.
 
@@ -72,7 +75,7 @@ def normalizeSampleRate(y, sr):
         return y
 
 
-def normalizeChannels(y):
+def normalizeChannels(y) -> np.ndarray:
     """
     Reduce layouts with more than two channels to the first two channels.
 
@@ -93,7 +96,7 @@ def normalizeChannels(y):
     return y
 
 
-def readChannelCount(y):
+def readChannelCount(y) -> int:
     """
     Infer number of audio channels from a librosa-loaded array ``y``.
 

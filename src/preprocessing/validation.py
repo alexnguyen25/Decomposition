@@ -14,7 +14,7 @@ import librosa
 from src.utils.exceptions import CorruptedFile, IncorrectExtension, InvalidLength
 
 
-def validAudio(file_path):
+def validAudio(file_path) -> None:
     """
     Validate a WAV file and return core audio properties.
 
@@ -41,7 +41,7 @@ def validAudio(file_path):
     checkLength(duration)
 
 
-def checkFileFormat(file_path):
+def checkFileFormat(file_path) -> None:
     """
     Ensure the file uses the allowed WAV extension.
 
@@ -61,7 +61,7 @@ def checkFileFormat(file_path):
     if ext != '.wav':
         raise IncorrectExtension("The file is not a .wav")
 
-def checkLength(duration):
+def checkLength(duration) -> None:
     """
     Enforce minimum and maximum duration for accepted clips.
 
