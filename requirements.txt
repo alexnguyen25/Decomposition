@@ -8,3 +8,4 @@ numpy>=1.26,<2
 soundfile>=0.12.1  # torchaudio.save WAV needs a backend (ffmpeg/sox ext or soundfile)
 diffq>=0.2.1  # required for quantized models (mdx_q, mdx_extra_q, …)
 matplotlib>=3.8.0
+essentia>=2.1b6.dev234
