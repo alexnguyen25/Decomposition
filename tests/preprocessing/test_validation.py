@@ -2,11 +2,11 @@
 Unit tests for ``src.preprocessing.validation``.
 
 Exercises ``validAudio`` and the domain exceptions raised for bad inputs:
-``IncorrectExtension``, ``CorruptedFile``, and ``InvalidLength``. Librosa is
-mocked so no real WAV files are required.
+``CorruptedFile`` and ``InvalidLength``. Librosa is mocked so no real audio
+files are required.
 
 Accepted policy (see ``validation.py``):
-    - Extension: ``.wav`` only (case-insensitive, e.g. ``.WAV``)
+    - Format: any extension librosa can decode
     - Duration: at least 5 seconds and at most 600 seconds (10 minutes)
 
 Run:
@@ -17,7 +17,7 @@ Mocking notes:
       successful read and a known duration.
     - ``side_effect`` on ``librosa.load`` simulates decode failures mapped to
       ``CorruptedFile``.
-    - Extension checks run before load; incorrect-extension tests need no patch.
+    - Format is validated by attempting ``librosa.load`` (no extension whitelist).
 """
 
 import unittest
@@ -26,7 +26,7 @@ from unittest.mock import patch
 import numpy as np
 
 from src.preprocessing.validation import validAudio
-from src.utils.exceptions import CorruptedFile, IncorrectExtension, InvalidLength
+from src.utils.exceptions import CorruptedFile, InvalidLength
 
 
 class TestValidAudio(unittest.TestCase):
@@ -34,9 +34,9 @@ class TestValidAudio(unittest.TestCase):
 
     @patch("src.preprocessing.validation.librosa.get_duration")
     @patch("src.preprocessing.validation.librosa.load")
-    def test_happy_path_valid_wav_in_duration_range(self, mock_load, mock_get_duration):
+    def test_happy_path_valid_audio_in_duration_range(self, mock_load, mock_get_duration):
         """
-        Happy path: ``.wav`` path, load succeeds, duration within 5–600 s.
+        Happy path: load succeeds, duration within 5–600 s.
 
         Does not raise; confirms ``librosa.load`` and ``get_duration`` were used.
         """
@@ -60,23 +60,16 @@ class TestValidAudio(unittest.TestCase):
         with self.assertRaises(CorruptedFile):
             validAudio("broken.wav")
 
-    def test_incorrect_extension_raises_incorrect_extension(self):
-        """Non-``.wav`` extensions (e.g. ``.mp3``) raise ``IncorrectExtension`` before load."""
-        with self.assertRaises(IncorrectExtension):
-            validAudio("fake.mp3")
-
     @patch("src.preprocessing.validation.librosa.get_duration")
     @patch("src.preprocessing.validation.librosa.load")
-    def test_uppercase_wav_extension_is_accepted(self, mock_load, mock_get_duration):
-        """
-        Extension check is case-insensitive; ``.WAV`` is treated like ``.wav``.
-        """
+    def test_non_wav_extension_is_accepted(self, mock_load, mock_get_duration):
+        """Non-WAV formats (e.g. ``.mp3``) are validated via librosa load like WAV."""
         mock_load.return_value = (np.zeros(5292000, dtype=np.float32), 44100)
         mock_get_duration.return_value = 120.0
 
-        validAudio("fake.WAV")
+        validAudio("fake.mp3")
 
-        mock_load.assert_called_once_with("fake.WAV", sr=None)
+        mock_load.assert_called_once_with("fake.mp3", sr=None)
 
     @patch("src.preprocessing.validation.librosa.get_duration")
     @patch("src.preprocessing.validation.librosa.load")

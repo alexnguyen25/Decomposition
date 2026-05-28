@@ -1,36 +1,34 @@
 """
 Audio file validation for the preprocessing pipeline.
 
-This module loads candidate WAV files with librosa, enforces extension and
-duration rules, and returns basic signal metadata. Validation failures raise
-domain-specific exceptions from ``src.utils.exceptions`` so callers can
-handle user input, corrupt files, and policy violations distinctly.
+This module loads candidate audio files with librosa, enforces duration rules,
+and returns basic signal metadata. Validation failures raise domain-specific
+exceptions from ``src.utils.exceptions`` so callers can handle user input,
+corrupt files, and policy violations distinctly.
 """
 
-import os
-
 import librosa
+from pathlib import Path
 
-from src.utils.exceptions import CorruptedFile, IncorrectExtension, InvalidLength
+
+from src.utils.exceptions import CorruptedFile, InvalidLength
 
 
-def validAudio(file_path) -> None:
+def validAudio(file_path: Path) -> None:
     """
-    Validate a WAV file and return core audio properties.
+    Validate an audio file and return core audio properties.
 
-    Runs format checks, attempts a full load via librosa, enforces duration
-    bounds, and infers channel count from the loaded waveform shape.
+    Attempts a full load via librosa, enforces duration bounds, and infers
+    channel count from the loaded waveform shape.
 
     Args:
-        file_path: Absolute or relative path to a ``.wav`` file.
+        file_path: Absolute or relative path to an audio file (any format
+            supported by librosa).
 
     Raises:
-        IncorrectExtension: If the path does not end with ``.wav`` (case-insensitive).
         CorruptedFile: If librosa cannot read the file.
         InvalidLength: If duration is under 5 seconds or over 10 minutes.
     """
-    checkFileFormat(file_path)
-
     try:
         y, sr = librosa.load(file_path, sr=None)
     except Exception:
@@ -40,26 +38,6 @@ def validAudio(file_path) -> None:
     duration = librosa.get_duration(y=y, sr=sr)
     checkLength(duration)
 
-
-def checkFileFormat(file_path) -> None:
-    """
-    Ensure the file uses the allowed WAV extension.
-
-    Args:
-        file_path: Path to the candidate audio file.
-
-    Raises:
-        IncorrectExtension: If the suffix is not ``.wav`` (case-insensitive).
-
-    Note:
-        Corruption is not detected here; use ``validAudio`` (librosa load) for that.
-    """
-    
-    filename, ext = os.path.splitext(file_path)
-    ext = ext.lower()
-
-    if ext != '.wav':
-        raise IncorrectExtension("The file is not a .wav")
 
 def checkLength(duration) -> None:
     """
