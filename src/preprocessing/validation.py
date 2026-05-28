@@ -7,11 +7,25 @@ exceptions from ``src.utils.exceptions`` so callers can handle user input,
 corrupt files, and policy violations distinctly.
 """
 
+import os
+
 import librosa
 from pathlib import Path
 
 
-from src.utils.exceptions import CorruptedFile, InvalidLength
+from src.utils.exceptions import CorruptedFile, IncorrectExtension, InvalidLength
+
+# Known non-audio extensions; anything else is allowed through to librosa.
+_NON_AUDIO_EXTENSIONS = frozenset({
+    ".txt", ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".csv",
+    ".md", ".rtf",
+    ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp", ".svg", ".ico", ".heic",
+    ".html", ".htm", ".css", ".js", ".json", ".xml", ".yaml", ".yml",
+    ".zip", ".tar", ".gz", ".bz2", ".rar", ".7z",
+    ".exe", ".dll", ".so", ".dylib", ".app", ".deb", ".rpm",
+    ".py", ".java", ".c", ".cpp", ".h", ".rs", ".go", ".rb", ".php",
+    ".mp4", ".avi", ".mkv", ".mov", ".wmv", ".webm", ".flv", ".m4v",
+})
 
 
 def validAudio(file_path: Path) -> None:
@@ -26,9 +40,12 @@ def validAudio(file_path: Path) -> None:
             supported by librosa).
 
     Raises:
+        IncorrectExtension: If the path has a known non-audio extension.
         CorruptedFile: If librosa cannot read the file.
         InvalidLength: If duration is under 5 seconds or over 10 minutes.
     """
+    checkFileFormat(file_path)
+
     try:
         y, sr = librosa.load(file_path, sr=None)
     except Exception:
@@ -37,6 +54,26 @@ def validAudio(file_path: Path) -> None:
 
     duration = librosa.get_duration(y=y, sr=sr)
     checkLength(duration)
+
+
+def checkFileFormat(file_path: Path) -> None:
+    """
+    Reject paths whose extension is a known non-audio type.
+
+    Audio formats are not whitelisted; unknown or missing extensions are allowed
+    and validated later by ``librosa.load``.
+
+    Args:
+        file_path: Path to the candidate audio file.
+
+    Raises:
+        IncorrectExtension: If the suffix is a known non-audio extension.
+    """
+    _, ext = os.path.splitext(file_path)
+    ext = ext.lower()
+
+    if ext in _NON_AUDIO_EXTENSIONS:
+        raise IncorrectExtension("The file is not an audio file")
 
 
 def checkLength(duration) -> None:

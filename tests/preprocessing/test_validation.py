@@ -2,11 +2,11 @@
 Unit tests for ``src.preprocessing.validation``.
 
 Exercises ``validAudio`` and the domain exceptions raised for bad inputs:
-``CorruptedFile`` and ``InvalidLength``. Librosa is mocked so no real audio
-files are required.
+``IncorrectExtension``, ``CorruptedFile``, and ``InvalidLength``. Librosa is
+mocked so no real audio files are required.
 
 Accepted policy (see ``validation.py``):
-    - Format: any extension librosa can decode
+    - Format: any audio extension; known non-audio types (e.g. ``.txt``) rejected
     - Duration: at least 5 seconds and at most 600 seconds (10 minutes)
 
 Run:
@@ -17,7 +17,7 @@ Mocking notes:
       successful read and a known duration.
     - ``side_effect`` on ``librosa.load`` simulates decode failures mapped to
       ``CorruptedFile``.
-    - Format is validated by attempting ``librosa.load`` (no extension whitelist).
+    - Non-audio extension checks run before load; those tests need no patch.
 """
 
 import unittest
@@ -26,7 +26,7 @@ from unittest.mock import patch
 import numpy as np
 
 from src.preprocessing.validation import validAudio
-from src.utils.exceptions import CorruptedFile, InvalidLength
+from src.utils.exceptions import CorruptedFile, IncorrectExtension, InvalidLength
 
 
 class TestValidAudio(unittest.TestCase):
@@ -59,6 +59,11 @@ class TestValidAudio(unittest.TestCase):
 
         with self.assertRaises(CorruptedFile):
             validAudio("broken.wav")
+
+    def test_non_audio_extension_raises_incorrect_extension(self):
+        """Known non-audio extensions (e.g. ``.txt``) raise ``IncorrectExtension`` before load."""
+        with self.assertRaises(IncorrectExtension):
+            validAudio("notes.txt")
 
     @patch("src.preprocessing.validation.librosa.get_duration")
     @patch("src.preprocessing.validation.librosa.load")
