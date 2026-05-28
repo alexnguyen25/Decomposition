@@ -7,10 +7,8 @@ class IncorrectExtension(Exception):
 class InvalidLength(Exception):
     pass
 
-
 class DemucsFail(Exception):
     pass
-
 
 class DemucsNotFound(Exception):
     pass
