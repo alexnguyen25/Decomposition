@@ -51,6 +51,9 @@ Thumbs.db
 # Project outputs (Demucs / separation)
 separated/
 
+# OpenMIC dataset (local download)
+data/openmic/
+
 # Optional: local model / checkpoint dumps (uncomment if you store these in-repo)
 *.pt
 *.pth
