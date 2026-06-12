@@ -20,6 +20,8 @@ import essentia.standard as es  # type: ignore[import-not-found]
 import librosa
 import numpy as np
 
+from src.config import HOP_LENGTH, N_FFT, N_MELS, SR
+
 def extract_mel_spectrogram(audio_path_other: Path) -> np.ndarray:
     """
     Compute a mel-scaled power spectrogram for an audio file.
@@ -33,9 +35,16 @@ def extract_mel_spectrogram(audio_path_other: Path) -> np.ndarray:
         The exact shape depends on `librosa` defaults (e.g. hop length) and the
         audio duration.
     """
-    y, sr = librosa.load(audio_path_other, sr=None)
+    y, _ = librosa.load(audio_path_other, sr=SR)
 
-    return librosa.feature.melspectrogram(y=y, sr=sr)
+    S = librosa.feature.melspectrogram(
+        y=y,
+        sr=SR,
+        n_mels=N_MELS,
+        n_fft=N_FFT,
+        hop_length=HOP_LENGTH,
+    )
+    return librosa.power_to_db(S, ref=np.max)
 
 def extract_bpm(audio_path_drums: Path) -> float:
     """
