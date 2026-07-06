@@ -16,16 +16,68 @@ from pathlib import Path
 from src.utils.exceptions import CorruptedFile, IncorrectExtension, InvalidLength
 
 # Known non-audio extensions; anything else is allowed through to librosa.
-_NON_AUDIO_EXTENSIONS = frozenset({
-    ".txt", ".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".csv",
-    ".md", ".rtf",
-    ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp", ".svg", ".ico", ".heic",
-    ".html", ".htm", ".css", ".js", ".json", ".xml", ".yaml", ".yml",
-    ".zip", ".tar", ".gz", ".bz2", ".rar", ".7z",
-    ".exe", ".dll", ".so", ".dylib", ".app", ".deb", ".rpm",
-    ".py", ".java", ".c", ".cpp", ".h", ".rs", ".go", ".rb", ".php",
-    ".mp4", ".avi", ".mkv", ".mov", ".wmv", ".webm", ".flv", ".m4v",
-})
+_NON_AUDIO_EXTENSIONS = frozenset(
+    {
+        ".txt",
+        ".pdf",
+        ".doc",
+        ".docx",
+        ".xls",
+        ".xlsx",
+        ".ppt",
+        ".pptx",
+        ".csv",
+        ".md",
+        ".rtf",
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".gif",
+        ".bmp",
+        ".webp",
+        ".svg",
+        ".ico",
+        ".heic",
+        ".html",
+        ".htm",
+        ".css",
+        ".js",
+        ".json",
+        ".xml",
+        ".yaml",
+        ".yml",
+        ".zip",
+        ".tar",
+        ".gz",
+        ".bz2",
+        ".rar",
+        ".7z",
+        ".exe",
+        ".dll",
+        ".so",
+        ".dylib",
+        ".app",
+        ".deb",
+        ".rpm",
+        ".py",
+        ".java",
+        ".c",
+        ".cpp",
+        ".h",
+        ".rs",
+        ".go",
+        ".rb",
+        ".php",
+        ".mp4",
+        ".avi",
+        ".mkv",
+        ".mov",
+        ".wmv",
+        ".webm",
+        ".flv",
+        ".m4v",
+    }
+)
 
 
 def validAudio(file_path: Path) -> None:
@@ -42,7 +94,7 @@ def validAudio(file_path: Path) -> None:
     Raises:
         IncorrectExtension: If the path has a known non-audio extension.
         CorruptedFile: If librosa cannot read the file.
-        InvalidLength: If duration is under 5 seconds or over 10 minutes.
+        InvalidLength: If duration is under 10 seconds or over 10 minutes.
     """
     checkFileFormat(file_path)
 
@@ -50,7 +102,6 @@ def validAudio(file_path: Path) -> None:
         y, sr = librosa.load(file_path, sr=None)
     except Exception:
         raise CorruptedFile("The file can't be loaded")
-    
 
     duration = librosa.get_duration(y=y, sr=sr)
     checkLength(duration)
@@ -84,8 +135,10 @@ def checkLength(duration) -> None:
         duration: Track length in seconds (typically from librosa).
 
     Raises:
-        InvalidLength: If ``duration`` is under 5 seconds or over 600 seconds (10 minutes).
+        InvalidLength: If ``duration`` is under 10 seconds or over 600 seconds (10 minutes).
     """
-    
-    if duration < 5 or duration > 600:
-        raise InvalidLength("The file length needs to be at least 5 seconds and under 10 minutes.")
+
+    if duration < 10 or duration > 600:
+        raise InvalidLength(
+            "The file length needs to be at least 10 seconds and under 10 minutes."
+        )

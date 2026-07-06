@@ -34,7 +34,9 @@ class TestValidAudio(unittest.TestCase):
 
     @patch("src.preprocessing.validation.librosa.get_duration")
     @patch("src.preprocessing.validation.librosa.load")
-    def test_happy_path_valid_audio_in_duration_range(self, mock_load, mock_get_duration):
+    def test_happy_path_valid_audio_in_duration_range(
+        self, mock_load, mock_get_duration
+    ):
         """
         Happy path: load succeeds, duration within 5–600 s.
 
@@ -78,7 +80,9 @@ class TestValidAudio(unittest.TestCase):
 
     @patch("src.preprocessing.validation.librosa.get_duration")
     @patch("src.preprocessing.validation.librosa.load")
-    def test_too_short_duration_raises_invalid_length(self, mock_load, mock_get_duration):
+    def test_too_short_duration_raises_invalid_length(
+        self, mock_load, mock_get_duration
+    ):
         """Duration under 5 seconds raises ``InvalidLength``."""
         mock_load.return_value = (np.zeros(176400, dtype=np.float32), 44100)
         mock_get_duration.return_value = 4.0
@@ -88,7 +92,9 @@ class TestValidAudio(unittest.TestCase):
 
     @patch("src.preprocessing.validation.librosa.get_duration")
     @patch("src.preprocessing.validation.librosa.load")
-    def test_too_long_duration_raises_invalid_length(self, mock_load, mock_get_duration):
+    def test_too_long_duration_raises_invalid_length(
+        self, mock_load, mock_get_duration
+    ):
         """Duration over 600 seconds raises ``InvalidLength``."""
         mock_load.return_value = (np.zeros(26504100, dtype=np.float32), 44100)
         mock_get_duration.return_value = 601.0

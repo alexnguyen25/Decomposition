@@ -30,7 +30,9 @@ from src.preprocessing.processing import (
 
 def _expected_processed_dir():
     """Return ``data/processed`` path using the same root logic as ``process_audio``."""
-    project_root = os.path.dirname(os.path.dirname(os.path.abspath(processing.__file__)))
+    project_root = os.path.dirname(
+        os.path.dirname(os.path.abspath(processing.__file__))
+    )
     return os.path.join(project_root, "data", "processed")
 
 
@@ -116,7 +118,10 @@ class TestProcessAudio(unittest.TestCase):
         mock_resample.assert_called_once()
         self.assertEqual(mock_resample.call_args.kwargs["target_sr"], 44100)
 
-        written_path, written_y = mock_write.call_args[0][0], mock_write.call_args.kwargs["y"]
+        written_path, written_y = (
+            mock_write.call_args[0][0],
+            mock_write.call_args.kwargs["y"],
+        )
         self.assertEqual(written_y.shape, (2, 2000))
         self.assertEqual(mock_write.call_args.kwargs["samplerate"], 44100)
 

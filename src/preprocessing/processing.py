@@ -16,7 +16,6 @@ import soundfile as sf
 from pathlib import Path
 
 
-
 def process_audio(file_path: Path) -> str:
     """
     Load an audio file, normalize sample rate and channel layout, and save a processed copy.
@@ -48,7 +47,6 @@ def process_audio(file_path: Path) -> str:
     base_name = os.path.basename(file_path)
     root, extension = os.path.splitext(base_name)
     new_file_path = os.path.join(output_dir, root + "_processed" + extension)
-
 
     sf.write(new_file_path, y=y, samplerate=44100)
     return new_file_path
@@ -114,6 +112,8 @@ def readChannelCount(y) -> int:
     elif y.ndim == 2:
         channels = y.shape[0]
     else:
-        channels = y.shape[1] # For 3D batches structured as (tracks, channels, samples)
-    
+        channels = y.shape[
+            1
+        ]  # For 3D batches structured as (tracks, channels, samples)
+
     return channels

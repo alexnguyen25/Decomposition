@@ -31,7 +31,12 @@ from src.feature_extraction.feature_extraction import extract_mel_spectrogram
 class OpenMICDataset(Dataset):
     """OpenMIC-2018 clips as mel spectrograms with multi-hot instrument labels."""
 
-    def __init__(self, openmic_dir: Path | str, partition: str) -> None:
+    def __init__(
+        self,
+        openmic_dir: Path | str,
+        partition: str,
+        cache_dir: Path | str | None = None,
+    ) -> None:
         """
         Load annotations and restrict samples to a partition file.
 
@@ -39,6 +44,8 @@ class OpenMICDataset(Dataset):
             openmic_dir: Root of the extracted OpenMIC-2018 tree.
             partition: Partition filename (e.g. ``"train01.txt"``) or stem
                 without extension (e.g. ``"train01"`` → ``train01.txt``).
+            cache_dir: Optional directory of precomputed ``{sample_key}.npy``
+                mel spectrograms. When a cache file exists, audio is not decoded.
 
         Attributes:
             Y_true: Filtered label confidences, shape ``(n, 20)``.
@@ -46,6 +53,7 @@ class OpenMICDataset(Dataset):
             sample_key: Filtered clip identifiers, shape ``(n,)``.
         """
         self.openmic_dir = Path(openmic_dir)
+        self.cache_dir = Path(cache_dir) if cache_dir is not None else None
 
         npz = np.load(self.openmic_dir / "openmic-2018.npz", allow_pickle=True)
         y_true = npz["Y_true"]
@@ -80,9 +88,14 @@ class OpenMICDataset(Dataset):
             - ``label_mask``: Float mask for loss weighting, shape ``(20,)``.
         """
         key = str(self.sample_key[i])
-        audio_path = self.openmic_dir / "audio" / key[:3] / f"{key}.ogg"
+        cache_path = self.cache_dir / f"{key}.npy" if self.cache_dir else None
 
-        mel = extract_mel_spectrogram(audio_path)
+        if cache_path is not None and cache_path.exists():
+            mel = np.load(cache_path)
+        else:
+            audio_path = self.openmic_dir / "audio" / key[:3] / f"{key}.ogg"
+            mel = extract_mel_spectrogram(audio_path)
+
         spec = torch.from_numpy(mel).unsqueeze(0).float()
 
         labels = torch.from_numpy((self.Y_true[i] >= 0.5).astype(np.float32))

@@ -22,6 +22,7 @@ import numpy as np
 
 from src.config import HOP_LENGTH, N_FFT, N_MELS, SR
 
+
 def extract_mel_spectrogram(audio_path_other: Path) -> np.ndarray:
     """
     Compute a mel-scaled power spectrogram for an audio file.
@@ -46,6 +47,7 @@ def extract_mel_spectrogram(audio_path_other: Path) -> np.ndarray:
     )
     return librosa.power_to_db(S, ref=np.max)
 
+
 def extract_bpm(audio_path_drums: Path) -> float:
     """
     Estimate tempo (BPM) from an audio file.
@@ -62,6 +64,7 @@ def extract_bpm(audio_path_drums: Path) -> float:
 
     # librosa returns a scalar tempo for mono input (and sometimes a numpy scalar).
     return float(tempo)
+
 
 def extract_key(audio_path: Path) -> str:
     """
@@ -82,7 +85,9 @@ def extract_key(audio_path: Path) -> str:
     return f"{key} {scale}"
 
 
-def extract_features(stems: Mapping[str, Path]) -> Dict[str, Union[str, float, np.ndarray]]:
+def extract_features(
+    stems: Mapping[str, Path],
+) -> Dict[str, Union[str, float, np.ndarray]]:
     """
     Extract all supported features from stem file paths.
 
@@ -105,5 +110,5 @@ def extract_features(stems: Mapping[str, Path]) -> Dict[str, Union[str, float, n
     return {
         "key": extract_key(stems["other"]),
         "bpm": extract_bpm(stems["drums"]),
-        "mel_spectrogram": extract_mel_spectrogram(stems["other"])
+        "mel_spectrogram": extract_mel_spectrogram(stems["other"]),
     }

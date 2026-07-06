@@ -78,9 +78,13 @@ def _run_demucs(
         to the terminal. ``check=True`` turns non-zero exit codes into exceptions.
     """
     command = [
-        "python3", "-m", "demucs.separate",
-        "-n", model,
-        "-o", str(output_dir),
+        "python3",
+        "-m",
+        "demucs.separate",
+        "-n",
+        model,
+        "-o",
+        str(output_dir),
         str(file_path),
     ]
 
