@@ -12,4 +12,4 @@ CHUNK_FRAMES = 431
 NUM_EPOCHS = 25
 OPENMIC_DIR = Path("data/openmic/openmic-2018")
 CACHE_DIR = Path("data/openmic/mel_cache")
-TRAIN_PARTITION = "train01.txt"
+TRAIN_PARTITION = "split01_train.csv"
