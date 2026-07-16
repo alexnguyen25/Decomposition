@@ -9,7 +9,7 @@ from src.feature_extraction.feature_extraction import extract_mel_spectrogram
 
 OPENMIC_DIR = Path("data/openmic/openmic-2018")
 CACHE_DIR = Path("data/openmic/mel_cache")
-PARTITIONS = ("split01_train.csv", "split01_test.csv")
+PARTITIONS = ("train01.txt", "test01.txt")
 
 
 def main() -> None:
