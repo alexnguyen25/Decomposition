@@ -11,8 +11,8 @@ Expected directory layout (after extracting the Zenodo archive)::
     ├── audio/{key[:3]}/{key}.ogg
     ├── openmic-2018.npz          # Y_true, Y_mask, sample_key
     └── partitions/
-        ├── split01_train.csv     # one sample key per line
-        └── split01_test.csv
+        ├── train01.txt           # one sample key per line
+        └── test01.txt
 
 Labels are weak: ``Y_true`` holds confidence scores in [0, 1] and ``Y_mask``
 marks which entries are confirmed. Training should threshold labels at 0.5 and
@@ -42,7 +42,7 @@ class OpenMICDataset(Dataset):
 
         Args:
             openmic_dir: Root of the extracted OpenMIC-2018 tree.
-            partition: Partition filename (e.g. ``"split01_train.csv"``) or stem
+            partition: Partition filename (e.g. ``"train01.txt"``) or stem
                 without extension (e.g. ``"train01"`` → ``train01.txt``).
             cache_dir: Optional directory of precomputed ``{sample_key}.npy``
                 mel spectrograms. When a cache file exists, audio is not decoded.

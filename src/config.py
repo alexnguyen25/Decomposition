@@ -1,6 +1,9 @@
 """Shared mel-spectrogram parameters for the classifier path."""
 
 from pathlib import Path
+from precompute_mel import OPENMIC_DIR
+from src.classification import train
+
 
 SR = 22050
 N_MELS = 128
@@ -12,4 +15,4 @@ CHUNK_FRAMES = 431
 NUM_EPOCHS = 25
 OPENMIC_DIR = Path("data/openmic/openmic-2018")
 CACHE_DIR = Path("data/openmic/mel_cache")
-TRAIN_PARTITION = "split01_train.csv"
+TRAIN_PARTITION = "train01.txt"
