@@ -16,7 +16,6 @@ Primary entrypoint:
 from pathlib import Path
 from typing import Dict, Mapping, Union
 
-import essentia.standard as es  # type: ignore[import-not-found]
 import librosa
 import numpy as np
 
@@ -80,6 +79,8 @@ def extract_key(audio_path: Path) -> str:
     Returns:
         str: Key and scale joined, e.g. ``"C# minor"`` or ``"F major"``.
     """
+    import essentia.standard as es  # type: ignore[import-not-found]
+
     audio = es.MonoLoader(filename=str(audio_path))()
     key, scale, _strength = es.KeyExtractor()(audio)
     return f"{key} {scale}"

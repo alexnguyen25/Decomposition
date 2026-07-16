@@ -1,14 +1,11 @@
 """Throwaway script to precompute mel spectrograms for OpenMIC-2018."""
 
-from pathlib import Path
-
 import numpy as np
 
 from src.classification.dataset import OpenMICDataset
+from src.config import OPENMIC_DIR, CACHE_DIR
 from src.feature_extraction.feature_extraction import extract_mel_spectrogram
 
-OPENMIC_DIR = Path("data/openmic/openmic-2018")
-CACHE_DIR = Path("data/openmic/mel_cache")
 PARTITIONS = ("split01_train.csv", "split01_test.csv")
 
 
