@@ -10,6 +10,7 @@ CHUNK_FRAMES = 431
 
 NUM_EPOCHS = 25
 TRAIN_PARTITION = "split01_train.csv"
+TEST_PARTITION = "split01_test.csv"
 
 if Path("/content").exists():
     _DRIVE = Path("/content/drive/MyDrive/Decomposition")
