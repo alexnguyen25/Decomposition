@@ -41,14 +41,17 @@ def process_audio(file_path: Path) -> str:
     y = normalizeSampleRate(y, sr)
     y = normalizeChannels(y)
 
-    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    project_root = os.path.dirname(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    )
     output_dir = os.path.join(project_root, "data", "processed")
+    os.makedirs(output_dir, exist_ok=True)
 
     base_name = os.path.basename(file_path)
     root, extension = os.path.splitext(base_name)
     new_file_path = os.path.join(output_dir, root + "_processed" + extension)
 
-    sf.write(new_file_path, y=y, samplerate=44100)
+    sf.write(new_file_path, data=y, samplerate=44100)
     return new_file_path
 
 

@@ -1,5 +1,8 @@
 """Check whether a Demucs stem is basically empty using framed RMS."""
 
+from pathlib import Path
+from typing import Mapping
+
 import librosa
 import numpy as np
 
@@ -26,3 +29,12 @@ def is_stem_silent(y, stem_name):
     floor = STEM_FLOORS[stem_name]
     loud_fraction = (rms > floor).mean()
     return loud_fraction < FRACTION_ABOVE_FLOOR
+
+
+def check_stem_presence(stems: Mapping[str, Path]) -> dict[str, bool]:
+    """Map each given stem to True if it's present (not near-silent)."""
+    presence = {}
+    for stem_name, path in stems.items():
+        y, _ = librosa.load(path, sr=None, mono=False)
+        presence[stem_name] = not is_stem_silent(y, stem_name)
+    return presence
