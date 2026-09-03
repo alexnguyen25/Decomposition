@@ -1,5 +1,5 @@
 Type: grilling
-Status: open
+Status: closed
 Blocked by: 06
 
 ## Question
@@ -22,3 +22,24 @@ real pass once the README's final numbers are locked:
 
 Blocked on the README ticket because bullets should quote numbers that are
 already locked and public, not numbers that might still shift.
+
+---
+
+## Resolution (2026-09-03)
+
+Answered in `.scratch/application-ready/resume-and-interview-prep.md`.
+
+- Bullet reads **0.650 → 0.805** (3 s.f.; exact 0.8045 stays in the README).
+- The chat agent gets its own bullet. "Trained a classifier" and "built an
+  agent that provably doesn't fabricate" are different hiring signals.
+- Added a bullet the ticket didn't anticipate: the benchmark-to-deployment
+  gap (0.805 vs 0.562), stated up front rather than buried.
+- **Stories: partly disagreed with the ticket's framing.** Three
+  failure-stories share one archetype and an interviewer learns nothing on
+  the second telling; the aggregation walk-back is too thin to carry five
+  minutes on its own. Final three are frozen-embeddings, the grounding
+  contract, and the generalisation gap — each built around a decision that
+  produced a result, each containing a measured failure. The aggregation
+  result is folded into story 3; the mocked-I/O-boundary bug is story 4, held
+  in reserve for SWE-leaning interviews. Reasoning is written out in the
+  deliverable.
