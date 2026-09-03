@@ -1,10 +1,9 @@
 """Check whether a Demucs stem is basically empty using framed RMS."""
 
+from collections.abc import Mapping
 from pathlib import Path
-from typing import Mapping
 
 import librosa
-import numpy as np
 
 # TBD — calibrate on real Demucs stems
 FRACTION_ABOVE_FLOOR = 0.05

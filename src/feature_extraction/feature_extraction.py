@@ -13,8 +13,8 @@ Primary entrypoint:
   file paths (at minimum containing `"drums"` and `"other"`).
 """
 
+from collections.abc import Mapping
 from pathlib import Path
-from typing import Dict, Mapping, Union
 
 import librosa
 import numpy as np
@@ -59,7 +59,7 @@ def extract_bpm(audio_path_drums: Path) -> float:
         Estimated tempo in beats-per-minute (BPM).
     """
     y, sr = librosa.load(audio_path_drums, sr=None)
-    tempo, beats = librosa.beat.beat_track(y=y, sr=sr)
+    tempo, _beat_frames = librosa.beat.beat_track(y=y, sr=sr)
 
     # librosa returns a scalar tempo for mono input (and sometimes a numpy scalar).
     return float(tempo)
@@ -88,7 +88,7 @@ def extract_key(audio_path: Path) -> str:
 
 def extract_features(
     stems: Mapping[str, Path],
-) -> Dict[str, Union[str, float, np.ndarray]]:
+) -> dict[str, str | float | np.ndarray]:
     """
     Extract all supported features from stem file paths.
 

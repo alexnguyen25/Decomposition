@@ -3,7 +3,7 @@
 import numpy as np
 
 from src.classification.dataset import OpenMICDataset
-from src.config import OPENMIC_DIR, CACHE_DIR
+from src.config import CACHE_DIR, OPENMIC_DIR
 from src.feature_extraction.feature_extraction import extract_mel_spectrogram
 
 PARTITIONS = ("split01_train.csv", "split01_test.csv")

@@ -54,8 +54,39 @@ separated/
 # OpenMIC dataset (local download)
 data/openmic/
 
-# Optional: local model / checkpoint dumps (uncomment if you store these in-repo)
+# --- model weights -----------------------------------------------------------
+# Blanket-ignore checkpoints, then re-admit the small ones that ARE this
+# project's own output. The 345 MB BEATs backbone is third-party and stays out:
+# scripts/fetch_models.py pulls it from the Hugging Face Hub.
 *.pt
 *.pth
 *.ckpt
 checkpoints/
+
+# (gitignore has no trailing comments — a '#' on a pattern line is literal)
+# trained here, 1.6 MB, the actual result:
+!models/ckpt_E10_beats_head.pt
+# trained here, documented negative result:
+!models/ckpt_E10_stem_recalib.pt
+# the 0.650 baseline CNN, 84 KB:
+!models/classifier.pt
+
+# --- research artefacts ------------------------------------------------------
+# The scripts and JSON results in data/f1_research/ ARE committed (they are the
+# "show your work" record). The regenerable multi-hundred-MB blobs are not.
+data/f1_research/*.npz
+data/f1_research/*.npy
+data/f1_research/beats/*.pt
+data/f1_research/jamendo/
+data/f1_research/shift_other_mels/
+data/f1_research/pylibs/
+data/f1_research/stem_audio_cache/
+
+# --- pipeline outputs --------------------------------------------------------
+data/processed/
+data/test_audio/
+models/beats/
+BUILD-PLAN.md
+
+# ephemeral job output from a locally-run backend
+reference-app/backend/jobs_data/

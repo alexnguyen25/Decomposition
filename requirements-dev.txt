@@ -1,1 +1,5 @@
+-r requirements.txt
+
 pytest>=8.0
+ruff>=0.5
+matplotlib>=3.8.0           # research plots only

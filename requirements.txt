@@ -1,11 +1,21 @@
-demucs==4.0.1
-librosa>=0.10.0
-certifi>=2024.0.0
-# Torch 2.11+ torchaudio requires torchcodec + FFmpeg dylibs; 2.2.x uses classic loaders.
+# Runtime dependencies for the analysis pipeline.
+#
+# Torch is pinned: 2.11+ torchaudio requires torchcodec plus FFmpeg dylibs,
+# while 2.2.x still uses the classic loaders that demucs and librosa expect.
 torch==2.2.2
 torchaudio==2.2.2
 numpy>=1.26,<2
-soundfile>=0.12.1  # torchaudio.save WAV needs a backend (ffmpeg/sox ext or soundfile)
-diffq>=0.2.1  # required for quantized models (mdx_q, mdx_extra_q, …)
-matplotlib>=3.8.0
+
+# separation + audio I/O
+demucs==4.0.1
+diffq>=0.2.1                # quantized demucs models (mdx_q, mdx_extra_q, ...)
+librosa>=0.10.0
+soundfile>=0.12.1           # torchaudio.save WAV needs a real backend
+
+# model weights that are not in git (see scripts/fetch_models.py)
+huggingface_hub>=0.24
+
+# musical key detection; the pipeline degrades gracefully without it
 essentia>=2.1b6.dev234
+
+certifi>=2024.0.0
