@@ -51,6 +51,20 @@ const REFUSAL =
 const UNREACHABLE =
   "The chat model isn't reachable right now — the analysis above is still all yours.";
 
+// Groq's free tier allows 60 requests per DAY across the whole project, which a
+// public demo can exhaust in an afternoon. Saying "unreachable" for that is
+// misleading: nothing is broken, the day's budget is simply spent. Visitors
+// deserve to know it comes back rather than assuming the demo is dead.
+const QUOTA_EXHAUSTED =
+  "This demo's daily AI quota is used up — it resets within 24 hours. " +
+  "Everything above is precomputed and still works.";
+
+/** True for a provider 429. The error carries the provider's own JSON body,
+ *  which is the only place the distinction survives. */
+function isRateLimited(error: unknown): boolean {
+  return error instanceof Error && /provider returned 429\b/.test(error.message);
+}
+
 type ToolCall = {
   id?: string;
   function?: { name?: string; arguments?: string };
@@ -118,7 +132,11 @@ export async function chat(
       // Visitors get an honest one-liner, never a stack trace — but the cause
       // has to reach the server logs or a misconfigured model is undebuggable.
       console.error("[chat] provider call failed:", error);
-      return { reply: UNREACHABLE, grounded: true, trace };
+      return {
+        reply: isRateLimited(error) ? QUOTA_EXHAUSTED : UNREACHABLE,
+        grounded: true,
+        trace,
+      };
     }
 
     const calls = message.tool_calls ?? [];

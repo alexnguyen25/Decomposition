@@ -43,6 +43,16 @@ MANIFEST = (Path(__file__).resolve().parents[1] / "reference-app" / "frontend"
 REFUSAL_MARKERS = ("not", "n't", "no ", "unable", "only", "beyond",
                    "unavailable", "unknown")
 
+# Canned replies the app returns when it never reached the model at all. These
+# assert nothing, so the grounding checker calls them clean — which once
+# produced a "0% hallucination, 6/6 traps" summary for a run in which all 30
+# calls had failed. Any new degraded reply in lib/agent/index.ts must be added
+# here, or the harness will silently score an outage as a pass.
+DEGRADED_REPLIES = (
+    ("The chat model isn't reachable", "provider unreachable"),
+    ("This demo's daily AI quota is used up", "provider quota exhausted"),
+)
+
 
 def _ssl_context() -> ssl.SSLContext | None:
     """CA bundle for HTTPS targets.
@@ -102,11 +112,18 @@ def main() -> None:
                         help="tag for the output file, e.g. the model name")
     parser.add_argument("--timeout", type=int, default=180)
     parser.add_argument("--delay", type=float, default=45.0,
-                        help="seconds between questions. Groq's free tier was "
-                             "measured at 4 requests/minute (not the 30 its docs "
-                             "imply) and one question costs 1-3 provider calls, "
-                             "so a full run takes ~25 minutes. Lower it for a "
-                             "local Ollama endpoint.")
+                        help="seconds between questions. Lower it for a local "
+                             "Ollama endpoint, where there is no quota to spend.")
+    parser.add_argument("--checkpoint", default=None,
+                        help="partial-results file. Questions already answered "
+                             "there are skipped, so a run can span several days "
+                             "of a daily quota. Defaults to "
+                             ".checkpoint_{label}.json next to this script.")
+    parser.add_argument("--give-up-after", type=int, default=3,
+                        help="stop after this many consecutive provider "
+                             "failures. The daily quota runs out mid-run on "
+                             "free tiers, and continuing just burns wall-clock "
+                             "time on calls that cannot succeed.")
     args = parser.parse_args()
 
     manifest = {ex["id"]: ex["result"] for ex in json.loads(MANIFEST.read_text())}
@@ -114,13 +131,36 @@ def main() -> None:
                  in (EVALS_DIR / "questions.jsonl").read_text().splitlines()
                  if line.strip()]
 
+    safe_label = re.sub(r"[^\w.-]", "_", args.label)
+    checkpoint_path = (Path(args.checkpoint) if args.checkpoint
+                       else EVALS_DIR / f".checkpoint_{safe_label}.json")
+
+    # Answers already collected on a previous run. Only graded rows are stored,
+    # never failures, so a question that hit the quota wall is retried rather
+    # than frozen as a permanent failure.
+    done: dict[str, dict] = {}
+    if checkpoint_path.exists():
+        done = {r["id"]: r for r in json.loads(checkpoint_path.read_text())}
+        print(f"resuming: {len(done)}/{len(questions)} answers already in "
+              f"{checkpoint_path.name}\n")
+
     rows = []
     disagreements = 0
     started = time.time()
+    consecutive_failures = 0
+    asked_this_run = 0
 
-    for position, question in enumerate(questions):
-        if position:
+    for question in questions:
+        if question["id"] in done:
+            rows.append(done[question["id"]])
+            continue
+        if consecutive_failures >= args.give_up_after:
+            rows.append({**question, "error": "not attempted (gave up early)",
+                         "passed": False})
+            continue
+        if asked_this_run:
             time.sleep(args.delay)
+        asked_this_run += 1
         result = manifest[question["track"]]
         t0 = time.time()
         try:
@@ -129,6 +169,7 @@ def main() -> None:
             print(f"✗ [{question['category']:12s}] {question['id']:22s} "
                   f"TRANSPORT ERROR {error}")
             rows.append({**question, "error": str(error), "passed": False})
+            consecutive_failures += 1
             continue
         latency = time.time() - t0
 
@@ -142,12 +183,18 @@ def main() -> None:
         # where all 30 calls had failed. A metric that scores an outage as a
         # pass is worse than no metric: count these as errors and refuse to
         # summarise a run that contains them.
-        if reply.startswith("The chat model isn't reachable"):
+        degraded = next(
+            (label for prefix, label in DEGRADED_REPLIES if reply.startswith(prefix)),
+            None,
+        )
+        if degraded:
             print(f"✗ [{question['category']:12s}] {question['id']:22s} "
-                  f"PROVIDER UNREACHABLE")
+                  f"{degraded.upper()}")
             rows.append({**question, "reply": reply,
-                         "error": "provider unreachable", "passed": False})
+                         "error": degraded, "passed": False})
+            consecutive_failures += 1
             continue
+        consecutive_failures = 0
 
         # Independent re-check. Tool outputs are not returned by the API, so
         # replay is impossible here — instead allow anything the analysis or a
@@ -170,11 +217,14 @@ def main() -> None:
                   f"shipped={shipped_verdict} independent={independent_ok}")
 
         passed, why = grade(question, reply, trace, independent_ok)
-        rows.append({**question, "reply": reply, "latency_s": round(latency, 1),
-                     "tools_used": [t["tool"] for t in trace],
-                     "grounded_shipped": shipped_verdict,
-                     "grounded_independent": independent_ok,
-                     "violations": violations, "passed": passed, "why": why})
+        row = {**question, "reply": reply, "latency_s": round(latency, 1),
+               "tools_used": [t["tool"] for t in trace],
+               "grounded_shipped": shipped_verdict,
+               "grounded_independent": independent_ok,
+               "violations": violations, "passed": passed, "why": why}
+        rows.append(row)
+        done[question["id"]] = row
+        checkpoint_path.write_text(json.dumps(list(done.values()), indent=1))
         print(f"{'✓' if passed else '✗'} [{question['category']:12s}] "
               f"{question['id']:22s} {latency:5.1f}s  {why}")
 
@@ -187,9 +237,13 @@ def main() -> None:
         sys.exit("no usable answers — nothing to score. Check the provider "
                  "configuration and the server logs before trusting any number.")
     if failed:
-        sys.exit(f"refusing to summarise: {len(failed)} of {len(rows)} questions "
-                 "never got an answer, so every rate below would be computed "
-                 "over a biased subset. Fix the provider and re-run.")
+        sys.exit(
+            f"refusing to summarise: {len(failed)} of {len(rows)} questions "
+            "never got an answer, so every rate below would be computed over a "
+            f"biased subset.\n{len(done)} answers are saved in "
+            f"{checkpoint_path.name}; re-run the same command once the provider "
+            "is available and only the missing questions will be asked."
+        )
 
     ungrounded = [r for r in graded if not r["grounded_independent"]]
     by_category: dict[str, list[bool]] = {}
@@ -214,7 +268,6 @@ def main() -> None:
         for row in ungrounded:
             print(f"  {row['id']}: {row['violations']} :: {row['reply'][:120]}")
 
-    safe_label = re.sub(r"[^\w.-]", "_", args.label)
     out_path = EVALS_DIR / f"results_{safe_label}.json"
     out_path.write_text(json.dumps({"summary": summary, "rows": rows}, indent=1))
     print(f"\nwrote {out_path}")

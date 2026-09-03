@@ -90,3 +90,6 @@ BUILD-PLAN.md
 
 # ephemeral job output from a locally-run backend
 reference-app/backend/jobs_data/
+
+# Eval harness checkpoints — partial runs, regenerated on the next run.
+evals/.checkpoint_*.json
