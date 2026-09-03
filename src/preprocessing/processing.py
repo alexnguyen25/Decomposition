@@ -9,11 +9,11 @@ validation (see ``validation.py``) so inputs are known-good WAV paths.
 """
 
 import os
+from pathlib import Path
 
 import librosa
 import numpy as np
 import soundfile as sf
-from pathlib import Path
 
 
 def process_audio(file_path: Path) -> str:

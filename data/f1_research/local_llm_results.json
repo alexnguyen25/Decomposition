@@ -1,0 +1,28 @@
+{
+  "rock_track": {
+    "ok": true,
+    "why": "ok",
+    "latency_s": 3.9,
+    "blurb": "A haunting guitar-driven track in C# minor, characterized by a steady beat and prominent bassline.",
+    "genre": "..."
+  },
+  "orchestral": {
+    "ok": true,
+    "why": "ok",
+    "latency_s": 2.5,
+    "blurb": "A melancholic violin and cello melody takes center stage, accompanied by the occasional trumpet flourish.",
+    "genre": "..."
+  },
+  "electronic": {
+    "ok": true,
+    "why": "ok",
+    "latency_s": 2.7,
+    "blurb": "A haunting piano melody is accompanied by the ominous presence of synthesizers, creating a dark and foreboding atmosphere.",
+    "genre": "Electronic/Experimental"
+  },
+  "_summary": {
+    "model": "llama3.2:3b",
+    "mean_latency_s": 3.0424023469289145,
+    "passes": 3
+  }
+}

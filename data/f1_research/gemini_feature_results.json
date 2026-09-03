@@ -1,0 +1,72 @@
+{
+  "gemini-flash-latest": {
+    "rock_track": {
+      "ok": true,
+      "why": "ok",
+      "latency_s": 5.95,
+      "tokens": {
+        "promptTokenCount": 281,
+        "candidatesTokenCount": 79,
+        "thoughtsTokenCount": 1021
+      },
+      "summary": "Riding an energetic tempo of 132.5 BPM in the key of C# minor, this track delivers a strong, driving groove. The mix features a solid foundation of vocals, drums, and bass working seamlessly together. A guitar grounds the overall melody to complete the arrangement."
+    },
+    "orchestral": {
+      "ok": true,
+      "why": "ok",
+      "latency_s": 5.77,
+      "tokens": {
+        "promptTokenCount": 326,
+        "candidatesTokenCount": 75,
+        "thoughtsTokenCount": 975
+      },
+      "summary": "Set in the bright key of D major at a relaxed 92 BPM, this piece is entirely instrumental, featuring no vocals, drums, or bass. A violin leads the soundscape alongside clear cello tones throughout. You might also notice hints of a trumpet weaving softly through the background."
+    },
+    "electronic": {
+      "ok": true,
+      "why": "ok",
+      "latency_s": 5.76,
+      "tokens": {
+        "promptTokenCount": 305,
+        "candidatesTokenCount": 69,
+        "thoughtsTokenCount": 1071
+      },
+      "summary": "Set in the moody key of F minor at a driving 124 BPM, this track builds its groove on a solid foundation of vocals, drums, and bass. A prominent synthesizer drives the melody, along with hints of piano layered into the soundscape."
+    }
+  },
+  "gemini-flash-lite-latest": {
+    "rock_track": {
+      "ok": true,
+      "why": "ok",
+      "latency_s": 0.77,
+      "tokens": {
+        "promptTokenCount": 281,
+        "candidatesTokenCount": 66,
+        "thoughtsTokenCount": 0
+      },
+      "summary": "This C# minor track keeps the energy high with a swift 132.5 BPM groove, featuring prominent vocals, driving drums, and a solid bassline. The mix also highlights a guitar."
+    },
+    "orchestral": {
+      "ok": true,
+      "why": "ok",
+      "latency_s": 0.74,
+      "tokens": {
+        "promptTokenCount": 326,
+        "candidatesTokenCount": 83,
+        "thoughtsTokenCount": 0
+      },
+      "summary": "This instrumental piece moves at a relaxed 92 BPM in the key of D major, completely skipping any vocals, drums, or bass. The arrangement features a prominent violin, alongside a clear cello and hints of trumpet floating through the mix."
+    },
+    "electronic": {
+      "ok": true,
+      "why": "ok",
+      "latency_s": 0.95,
+      "tokens": {
+        "promptTokenCount": 305,
+        "candidatesTokenCount": 97,
+        "thoughtsTokenCount": 0
+      },
+      "summary": "This energetic track moves at a brisk 124 BPM in the key of F minor, featuring a driving rhythm section complete with drums and bass. The mix is anchored by a prominent synthesizer alongside likely hints of piano beneath the surface. With clear vocals rounding out the arrangement, it delivers a focused and electronic-leaning groove."
+    }
+  }
+}

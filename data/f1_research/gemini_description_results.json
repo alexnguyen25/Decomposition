@@ -1,0 +1,447 @@
+{
+  "867662": {
+    "pipeline_json": {
+      "bpm": 152.0,
+      "key": "A minor",
+      "instruments": [
+        {
+          "name": "accordion",
+          "confidence": 0.953
+        },
+        {
+          "name": "trumpet",
+          "confidence": 0.937
+        },
+        {
+          "name": "violin",
+          "confidence": 0.901
+        },
+        {
+          "name": "trombone",
+          "confidence": 0.871
+        },
+        {
+          "name": "saxophone",
+          "confidence": 0.767
+        },
+        {
+          "name": "cello",
+          "confidence": 0.718
+        },
+        {
+          "name": "guitar",
+          "confidence": 0.672
+        }
+      ]
+    },
+    "jamendo_tags": [
+      "accordion",
+      "guitar",
+      "saxophone",
+      "trumpet",
+      "violin"
+    ],
+    "runs": {
+      "gemini-flash-lite-latest/text_only": {
+        "ok": true,
+        "why": "ok",
+        "latency_s": 1.24,
+        "tokens": {
+          "promptTokenCount": 508,
+          "candidatesTokenCount": 176,
+          "thoughtsTokenCount": 0
+        },
+        "response": {
+          "blurb": "Driven by a brisk tempo in A minor, this track features a prominent accordion and bright trumpet lines weaving alongside a clear violin melody. A clear trombone and saxophone add rich texture, supported by a cello and a guitar that we can guess at.",
+          "genre": "Folk-jazz fusion",
+          "moods": [
+            "energetic",
+            "lively",
+            "dramatic"
+          ],
+          "energy": "high",
+          "tempo_feel": "fast and driving",
+          "era_production": "acoustic and organic",
+          "mentioned_instruments": [
+            "accordion",
+            "trumpet",
+            "violin",
+            "trombone",
+            "saxophone",
+            "cello",
+            "guitar"
+          ]
+        }
+      },
+      "gemini-flash-lite-latest/multimodal": {
+        "ok": true,
+        "why": "ok",
+        "latency_s": 2.74,
+        "tokens": {
+          "promptTokenCount": 2027,
+          "candidatesTokenCount": 154,
+          "thoughtsTokenCount": 0
+        },
+        "response": {
+          "blurb": "This high-energy track swings with a frantic pace, driven by a lively accordion and a bright brass section featuring trumpet and trombone. Violin melodies weave through the mix, creating a playful yet intense atmosphere.",
+          "genre": "Polka",
+          "moods": [
+            "Energetic",
+            "Jovial",
+            "Hectic"
+          ],
+          "energy": "high",
+          "tempo_feel": "Fast and driving",
+          "era_production": "Lively live-band production",
+          "mentioned_instruments": [
+            "accordion",
+            "trumpet",
+            "trombone",
+            "violin"
+          ]
+        }
+      },
+      "gemini-flash-latest/text_only": {
+        "ok": true,
+        "why": "ok",
+        "latency_s": 10.97,
+        "tokens": {
+          "promptTokenCount": 508,
+          "candidatesTokenCount": 199,
+          "thoughtsTokenCount": 2093
+        },
+        "response": {
+          "blurb": "Set in A minor at a fast driving tempo, this track is led by accordion, trumpet, and violin. The arrangement features clear trombone, saxophone, and cello adding full-bodied brass and string layers, along with what sounds like a subtle guitar in the background. The blend of rapid pacing and minor-key harmony gives the piece a dramatic yet celebratory energy.",
+          "genre": "Balkan Folk",
+          "moods": [
+            "energetic",
+            "dramatic",
+            "festive"
+          ],
+          "energy": "high",
+          "tempo_feel": "fast and driving",
+          "era_production": "organic live ensemble sound",
+          "mentioned_instruments": [
+            "accordion",
+            "trumpet",
+            "violin",
+            "trombone",
+            "saxophone",
+            "cello",
+            "guitar"
+          ]
+        }
+      },
+      "gemini-flash-latest/multimodal": {
+        "ok": true,
+        "why": "ok",
+        "latency_s": 8.77,
+        "tokens": {
+          "promptTokenCount": 2027,
+          "candidatesTokenCount": 196,
+          "thoughtsTokenCount": 1033
+        },
+        "response": {
+          "blurb": "Driven by a brisk ska groove in A minor, this lively track delivers an infectious blend of folk and ska-punk energy. The accordion, trumpet, and violin lead the melody with festive flair, punctuated by clear saxophone and clear trombone hits. Rhythmically, what sounds like a guitar skanks along with driving drums and bass to keep the energy soaring.",
+          "genre": "Ska Punk",
+          "moods": [
+            "energetic",
+            "upbeat",
+            "festive"
+          ],
+          "energy": "high",
+          "tempo_feel": "fast driving offbeat groove",
+          "era_production": "modern organic ska-rock production",
+          "mentioned_instruments": [
+            "accordion",
+            "trumpet",
+            "violin",
+            "saxophone",
+            "trombone",
+            "guitar"
+          ]
+        }
+      }
+    }
+  },
+  "783235": {
+    "pipeline_json": {
+      "bpm": 117.5,
+      "key": "C minor",
+      "instruments": [
+        {
+          "name": "piano",
+          "confidence": 0.944
+        },
+        {
+          "name": "mallet_percussion",
+          "confidence": 0.94
+        },
+        {
+          "name": "violin",
+          "confidence": 0.754
+        },
+        {
+          "name": "synthesizer",
+          "confidence": 0.664
+        },
+        {
+          "name": "cello",
+          "confidence": 0.647
+        },
+        {
+          "name": "flute",
+          "confidence": 0.535
+        }
+      ]
+    },
+    "jamendo_tags": [
+      "cello",
+      "organ",
+      "piano",
+      "synthesizer",
+      "violin"
+    ],
+    "runs": {
+      "gemini-flash-lite-latest/text_only": {
+        "ok": true,
+        "why": "ok",
+        "latency_s": 1.17,
+        "tokens": {
+          "promptTokenCount": 489,
+          "candidatesTokenCount": 185,
+          "thoughtsTokenCount": 0
+        },
+        "response": {
+          "blurb": "Driven by a steady moderate tempo in C minor, this track features a piano and mallet percussion that lead the arrangement. Clear violin melodies intertwine with a synthesizer, while a cello and flute likely provide subtle harmonic and textural depth beneath the surface.",
+          "genre": "ambient neoclassical",
+          "moods": [
+            "contemplative",
+            "melancholic",
+            "serene"
+          ],
+          "energy": "medium",
+          "tempo_feel": "a steady, mid-tempo walking groove",
+          "era_production": "contemporary hybrid acoustic and electronic production",
+          "mentioned_instruments": [
+            "piano",
+            "mallet_percussion",
+            "violin",
+            "synthesizer",
+            "cello",
+            "flute"
+          ]
+        }
+      },
+      "gemini-flash-lite-latest/multimodal": {
+        "ok": true,
+        "why": "ok",
+        "latency_s": 2.11,
+        "tokens": {
+          "promptTokenCount": 2008,
+          "candidatesTokenCount": 163,
+          "thoughtsTokenCount": 0
+        },
+        "response": {
+          "blurb": "This dramatic piece in C minor builds intensity through sweeping violin sections and a prominent piano melody. Delicate touches of mallet percussion and synthesizer add texture to the lush, cinematic arrangement.",
+          "genre": "orchestral",
+          "moods": [
+            "dramatic",
+            "cinematic",
+            "melancholic"
+          ],
+          "energy": "medium",
+          "tempo_feel": "steady and flowing",
+          "era_production": "modern orchestral blend",
+          "mentioned_instruments": [
+            "piano",
+            "mallet_percussion",
+            "violin",
+            "synthesizer",
+            "cello",
+            "flute"
+          ]
+        }
+      },
+      "gemini-flash-latest/text_only": {
+        "ok": true,
+        "why": "ok",
+        "latency_s": 8.56,
+        "tokens": {
+          "promptTokenCount": 489,
+          "candidatesTokenCount": 199,
+          "thoughtsTokenCount": 1627
+        },
+        "response": {
+          "blurb": "Set in a brooding C minor with a brisk mid-tempo pace, this piece is driven by piano and mallet percussion alongside clear violin passages. Soft layers suggest what might be a synthesizer and perhaps a cello, with faint hints of flute hovering in the background. The result is a dynamic, evocative blend of acoustic chamber elements and modern textural accents.",
+          "genre": "Cinematic Neoclassical",
+          "moods": [
+            "brooding",
+            "reflective",
+            "dramatic"
+          ],
+          "energy": "medium",
+          "tempo_feel": "steady mid-tempo drive",
+          "era_production": "modern hybrid production",
+          "mentioned_instruments": [
+            "piano",
+            "mallet_percussion",
+            "violin",
+            "synthesizer",
+            "cello",
+            "flute"
+          ]
+        }
+      },
+      "gemini-flash-latest/multimodal": {
+        "ok": true,
+        "why": "ok",
+        "latency_s": 6.52,
+        "tokens": {
+          "promptTokenCount": 2008,
+          "candidatesTokenCount": 185,
+          "thoughtsTokenCount": 956
+        },
+        "response": {
+          "blurb": "Set in a brooding C minor key, this dramatic piece opens with powerful vocal harmonies before dropping into an intricate rhythm driven by piano and mallet percussion. A clear violin melody weaves through the delicate textures, supported by subtle touches of cello that reinforce the melancholic mood. The steady mid-tempo pace maintains a captivating cinematic tension throughout.",
+          "genre": "Cinematic Orchestral",
+          "moods": [
+            "dramatic",
+            "haunting",
+            "solemn"
+          ],
+          "energy": "medium",
+          "tempo_feel": "stately mid-tempo flow",
+          "era_production": "modern film score production",
+          "mentioned_instruments": [
+            "piano",
+            "mallet_percussion",
+            "violin",
+            "cello"
+          ]
+        }
+      }
+    }
+  },
+  "6253": {
+    "pipeline_json": {
+      "bpm": 215.3,
+      "key": "C minor",
+      "instruments": [
+        {
+          "name": "piano",
+          "confidence": 1.0
+        }
+      ]
+    },
+    "jamendo_tags": [
+      "cello",
+      "clarinet",
+      "trombone",
+      "trumpet",
+      "violin"
+    ],
+    "runs": {
+      "gemini-flash-lite-latest/text_only": {
+        "ok": true,
+        "why": "ok",
+        "latency_s": 0.8,
+        "tokens": {
+          "promptTokenCount": 356,
+          "candidatesTokenCount": 131,
+          "thoughtsTokenCount": 0
+        },
+        "response": {
+          "blurb": "Driven by a relentlessly fast tempo in C minor, this track features a prominent piano performance that anchors the entire arrangement. The high energy and rapid pacing create a frantic, immersive listening experience.",
+          "genre": "electronic",
+          "moods": [
+            "intense",
+            "frantic",
+            "urgent"
+          ],
+          "energy": "high",
+          "tempo_feel": "breakneck and rushing",
+          "era_production": "modern digital production",
+          "mentioned_instruments": [
+            "piano"
+          ]
+        }
+      },
+      "gemini-flash-lite-latest/multimodal": {
+        "ok": true,
+        "why": "ok",
+        "latency_s": 1.99,
+        "tokens": {
+          "promptTokenCount": 1875,
+          "candidatesTokenCount": 128,
+          "thoughtsTokenCount": 0
+        },
+        "response": {
+          "blurb": "This dramatic piece in C minor features a cascading piano melody that rolls forward at a breathtaking pace. The intricate keyboard work creates an atmosphere of relentless motion and emotional intensity.",
+          "genre": "Classical crossover",
+          "moods": [
+            "urgent",
+            "dramatic",
+            "restless"
+          ],
+          "energy": "high",
+          "tempo_feel": "blazing fast tempo",
+          "era_production": "clean digital recording",
+          "mentioned_instruments": [
+            "piano"
+          ]
+        }
+      },
+      "gemini-flash-latest/text_only": {
+        "ok": true,
+        "why": "ok",
+        "latency_s": 8.05,
+        "tokens": {
+          "promptTokenCount": 356,
+          "candidatesTokenCount": 151,
+          "thoughtsTokenCount": 1312
+        },
+        "response": {
+          "blurb": "Anchored by a prominent piano, this track charges forward in C minor at a remarkably swift pace. The combination of frantic speed and a minor key points toward a dramatic, urgent mood, though any genre label remains an educated guess derived from the rapid tempo and acoustic instrumentation.",
+          "genre": "Cinematic Piano",
+          "moods": [
+            "urgent",
+            "dramatic",
+            "frantic"
+          ],
+          "energy": "high",
+          "tempo_feel": "blistering and relentless",
+          "era_production": "contemporary acoustic recording",
+          "mentioned_instruments": [
+            "piano"
+          ]
+        }
+      },
+      "gemini-flash-latest/multimodal": {
+        "ok": true,
+        "why": "ok",
+        "latency_s": 6.39,
+        "tokens": {
+          "promptTokenCount": 1875,
+          "candidatesTokenCount": 148,
+          "thoughtsTokenCount": 788
+        },
+        "response": {
+          "blurb": "Set in C minor, this track delivers a fast and playful performance driven by a energetic stride rhythm. The piano showcases impressive virtuosity with bright syncopated flourishes and swift melodic runs. Its theatrical, uptempo feel creates a lively vintage cabaret atmosphere.",
+          "genre": "Stride Jazz",
+          "moods": [
+            "playful",
+            "lively",
+            "theatrical"
+          ],
+          "energy": "high",
+          "tempo_feel": "brisk uptempo stride",
+          "era_production": "classic acoustic studio recording",
+          "mentioned_instruments": [
+            "piano"
+          ]
+        }
+      }
+    }
+  }
+}

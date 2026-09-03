@@ -1,0 +1,11 @@
+# Backend deps. torch/librosa/demucs versions match the research environment.
+fastapi
+uvicorn
+python-multipart
+torch>=2.2
+torchaudio>=2.2
+demucs==4.0.1
+librosa>=0.10
+soundfile>=0.13
+numpy
+# optional: essentia (musical key detection); app degrades gracefully without

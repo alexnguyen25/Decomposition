@@ -1,0 +1,316 @@
+{
+  "summary": {
+    "tag_recall": 0.2804878048780488,
+    "extras_per_track": 1.1428571428571428,
+    "mean_latency_s": 7.039277161870684
+  },
+  "per_track": {
+    "6253": {
+      "tags": [
+        "cello",
+        "clarinet",
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "pred": [
+        "piano"
+      ],
+      "hits": [],
+      "extras": [
+        "piano"
+      ],
+      "latency_s": 4.938510894775391
+    },
+    "6256": {
+      "tags": [
+        "cello",
+        "clarinet",
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "pred": [
+        "flute",
+        "guitar",
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "hits": [
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "extras": [
+        "flute",
+        "guitar"
+      ],
+      "latency_s": 9.231042861938477
+    },
+    "95671": {
+      "tags": [
+        "cello",
+        "flute",
+        "piano",
+        "trombone",
+        "trumpet"
+      ],
+      "pred": [
+        "accordion",
+        "guitar",
+        "synthesizer"
+      ],
+      "hits": [],
+      "extras": [
+        "accordion",
+        "guitar",
+        "synthesizer"
+      ],
+      "latency_s": 8.249796867370605
+    },
+    "811121": {
+      "tags": [
+        "cello",
+        "flute",
+        "piano",
+        "synthesizer",
+        "violin"
+      ],
+      "pred": [
+        "cello",
+        "guitar",
+        "mallet_percussion",
+        "mandolin",
+        "violin"
+      ],
+      "hits": [
+        "cello",
+        "violin"
+      ],
+      "extras": [
+        "guitar",
+        "mallet_percussion",
+        "mandolin"
+      ],
+      "latency_s": 7.331593036651611
+    },
+    "867662": {
+      "tags": [
+        "accordion",
+        "guitar",
+        "saxophone",
+        "trumpet",
+        "violin"
+      ],
+      "pred": [
+        "accordion",
+        "guitar"
+      ],
+      "hits": [
+        "accordion",
+        "guitar"
+      ],
+      "extras": [],
+      "latency_s": 7.420829772949219
+    },
+    "867663": {
+      "tags": [
+        "accordion",
+        "guitar",
+        "saxophone",
+        "trumpet",
+        "violin"
+      ],
+      "pred": [
+        "guitar"
+      ],
+      "hits": [
+        "guitar"
+      ],
+      "extras": [],
+      "latency_s": 7.139085054397583
+    },
+    "20744": {
+      "tags": [
+        "guitar",
+        "organ",
+        "piano",
+        "trumpet",
+        "violin"
+      ],
+      "pred": [
+        "accordion",
+        "guitar",
+        "violin"
+      ],
+      "hits": [
+        "guitar",
+        "violin"
+      ],
+      "extras": [
+        "accordion"
+      ],
+      "latency_s": 7.562945127487183
+    },
+    "783235": {
+      "tags": [
+        "cello",
+        "organ",
+        "piano",
+        "synthesizer",
+        "violin"
+      ],
+      "pred": [
+        "mallet_percussion",
+        "piano",
+        "violin"
+      ],
+      "hits": [
+        "piano",
+        "violin"
+      ],
+      "extras": [
+        "mallet_percussion"
+      ],
+      "latency_s": 5.753712892532349
+    },
+    "6257": {
+      "tags": [
+        "cello",
+        "clarinet",
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "pred": [
+        "accordion",
+        "guitar"
+      ],
+      "hits": [],
+      "extras": [
+        "accordion",
+        "guitar"
+      ],
+      "latency_s": 6.201939821243286
+    },
+    "6258": {
+      "tags": [
+        "cello",
+        "clarinet",
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "pred": [
+        "cello",
+        "synthesizer",
+        "violin"
+      ],
+      "hits": [
+        "cello",
+        "violin"
+      ],
+      "extras": [
+        "synthesizer"
+      ],
+      "latency_s": 10.110108852386475
+    },
+    "398172": {
+      "tags": [
+        "cello",
+        "piano",
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "pred": [
+        "cello",
+        "piano",
+        "synthesizer",
+        "violin"
+      ],
+      "hits": [
+        "cello",
+        "piano",
+        "violin"
+      ],
+      "extras": [
+        "synthesizer"
+      ],
+      "latency_s": 7.099238157272339
+    },
+    "398174": {
+      "tags": [
+        "cello",
+        "clarinet",
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "pred": [
+        "accordion",
+        "cello",
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "hits": [
+        "cello",
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "extras": [
+        "accordion"
+      ],
+      "latency_s": 7.20874810218811
+    },
+    "585147": {
+      "tags": [
+        "cello",
+        "clarinet",
+        "flute",
+        "guitar",
+        "organ",
+        "piano",
+        "saxophone",
+        "synthesizer",
+        "trombone",
+        "trumpet",
+        "ukulele",
+        "violin"
+      ],
+      "pred": [
+        "synthesizer"
+      ],
+      "hits": [
+        "synthesizer"
+      ],
+      "extras": [],
+      "latency_s": 5.584585905075073
+    },
+    "556349": {
+      "tags": [
+        "accordion",
+        "cello",
+        "clarinet",
+        "flute",
+        "guitar",
+        "piano",
+        "saxophone",
+        "synthesizer",
+        "trumpet",
+        "violin"
+      ],
+      "pred": [
+        "guitar"
+      ],
+      "hits": [
+        "guitar"
+      ],
+      "extras": [],
+      "latency_s": 4.717742919921875
+    }
+  }
+}

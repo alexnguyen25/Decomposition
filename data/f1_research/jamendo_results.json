@@ -1,0 +1,4185 @@
+{
+  "per_track": {
+    "6253": {
+      "tags": [
+        "cello",
+        "clarinet",
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "models": {
+        "baseline": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "trombone"
+            ],
+            "extras": [
+              "accordion",
+              "banjo",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "ukulele"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "guitar",
+              "mandolin",
+              "piano"
+            ],
+            "hits": [],
+            "misses": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "extras": [
+              "guitar",
+              "mandolin",
+              "piano"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "trombone"
+            ],
+            "extras": [
+              "accordion",
+              "banjo",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "ukulele"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "guitar",
+              "mandolin",
+              "piano"
+            ],
+            "hits": [],
+            "misses": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "extras": [
+              "guitar",
+              "mandolin",
+              "piano"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "guitar",
+              "mandolin",
+              "piano"
+            ],
+            "hits": [],
+            "misses": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "extras": [
+              "guitar",
+              "mandolin",
+              "piano"
+            ]
+          }
+        },
+        "E4_cnn4_specaug_posweight": {
+          "other_max_0.5": {
+            "predicted": [
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "violin"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "banjo",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer",
+              "ukulele"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "piano",
+              "synthesizer"
+            ],
+            "hits": [],
+            "misses": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "extras": [
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "piano",
+              "synthesizer"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "banjo",
+              "cello",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "violin"
+            ],
+            "misses": [
+              "clarinet",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "banjo",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer"
+            ],
+            "hits": [],
+            "misses": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "extras": [
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer"
+            ],
+            "hits": [],
+            "misses": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "extras": [
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer"
+            ]
+          }
+        }
+      }
+    },
+    "6256": {
+      "tags": [
+        "cello",
+        "clarinet",
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "models": {
+        "baseline": {
+          "other_max_0.5": {
+            "predicted": [
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "banjo",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "clarinet",
+              "violin"
+            ],
+            "misses": [
+              "cello",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "banjo",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "clarinet",
+              "violin"
+            ],
+            "misses": [
+              "cello",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ],
+            "hits": [],
+            "misses": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "extras": [
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ]
+          }
+        },
+        "E4_cnn4_specaug_posweight": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "ukulele"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "flute",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "violin"
+            ],
+            "misses": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "flute",
+              "piano",
+              "synthesizer"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "violin"
+            ],
+            "misses": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer"
+            ],
+            "hits": [],
+            "misses": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "extras": [
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer"
+            ]
+          }
+        }
+      }
+    },
+    "95671": {
+      "tags": [
+        "cello",
+        "flute",
+        "piano",
+        "trombone",
+        "trumpet"
+      ],
+      "models": {
+        "baseline": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "guitar",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano"
+            ],
+            "misses": [
+              "flute",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "accordion",
+              "clarinet",
+              "guitar",
+              "organ",
+              "synthesizer",
+              "violin"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "cello",
+              "guitar",
+              "piano"
+            ],
+            "hits": [
+              "cello",
+              "piano"
+            ],
+            "misses": [
+              "flute",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "guitar"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "guitar",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano"
+            ],
+            "misses": [
+              "flute",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "accordion",
+              "clarinet",
+              "guitar",
+              "organ",
+              "synthesizer",
+              "violin"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "cello",
+              "guitar",
+              "piano"
+            ],
+            "hits": [
+              "cello",
+              "piano"
+            ],
+            "misses": [
+              "flute",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "guitar"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "guitar",
+              "synthesizer"
+            ],
+            "hits": [],
+            "misses": [
+              "cello",
+              "flute",
+              "piano",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "guitar",
+              "synthesizer"
+            ]
+          }
+        },
+        "E4_cnn4_specaug_posweight": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "flute",
+              "piano",
+              "trombone"
+            ],
+            "misses": [
+              "trumpet"
+            ],
+            "extras": [
+              "accordion",
+              "clarinet",
+              "guitar",
+              "mallet_percussion",
+              "organ",
+              "saxophone",
+              "synthesizer",
+              "violin"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "cello",
+              "clarinet",
+              "flute",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "flute",
+              "piano"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "clarinet",
+              "organ",
+              "synthesizer",
+              "violin"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "flute",
+              "piano"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "accordion",
+              "clarinet",
+              "mallet_percussion",
+              "organ",
+              "saxophone",
+              "synthesizer",
+              "violin"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "cello",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "flute",
+              "piano"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "mallet_percussion",
+              "organ",
+              "synthesizer",
+              "violin"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "cello",
+              "flute",
+              "mallet_percussion",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "flute",
+              "piano"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "mallet_percussion",
+              "synthesizer",
+              "violin"
+            ]
+          }
+        }
+      }
+    },
+    "811121": {
+      "tags": [
+        "cello",
+        "flute",
+        "piano",
+        "synthesizer",
+        "violin"
+      ],
+      "models": {
+        "baseline": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "guitar",
+              "mandolin",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "misses": [
+              "flute"
+            ],
+            "extras": [
+              "accordion",
+              "banjo",
+              "clarinet",
+              "guitar",
+              "mandolin",
+              "organ",
+              "saxophone"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "cello",
+              "guitar",
+              "piano",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "violin"
+            ],
+            "misses": [
+              "flute",
+              "synthesizer"
+            ],
+            "extras": [
+              "guitar"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "guitar",
+              "mandolin",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "misses": [
+              "flute"
+            ],
+            "extras": [
+              "accordion",
+              "banjo",
+              "clarinet",
+              "guitar",
+              "mandolin",
+              "organ",
+              "saxophone"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "cello",
+              "guitar",
+              "piano",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "violin"
+            ],
+            "misses": [
+              "flute",
+              "synthesizer"
+            ],
+            "extras": [
+              "guitar"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "cello",
+              "guitar",
+              "piano",
+              "synthesizer"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "synthesizer"
+            ],
+            "misses": [
+              "flute",
+              "violin"
+            ],
+            "extras": [
+              "guitar"
+            ]
+          }
+        },
+        "E4_cnn4_specaug_posweight": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "flute",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "clarinet",
+              "guitar",
+              "mallet_percussion",
+              "organ"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "flute",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "clarinet",
+              "organ"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "flute",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "clarinet",
+              "mallet_percussion",
+              "mandolin",
+              "organ"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "flute",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "clarinet",
+              "organ"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "cello",
+              "flute",
+              "mallet_percussion",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "flute",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "mallet_percussion"
+            ]
+          }
+        }
+      }
+    },
+    "867662": {
+      "tags": [
+        "accordion",
+        "guitar",
+        "saxophone",
+        "trumpet",
+        "violin"
+      ],
+      "models": {
+        "baseline": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer",
+              "trombone",
+              "ukulele"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "clarinet",
+              "guitar",
+              "mandolin",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "banjo",
+              "clarinet",
+              "mandolin",
+              "trombone"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer",
+              "trombone",
+              "ukulele"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "clarinet",
+              "guitar",
+              "mandolin",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "banjo",
+              "clarinet",
+              "mandolin",
+              "trombone"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "guitar",
+              "saxophone",
+              "trombone",
+              "trumpet"
+            ],
+            "hits": [
+              "guitar",
+              "saxophone",
+              "trumpet"
+            ],
+            "misses": [
+              "accordion",
+              "violin"
+            ],
+            "extras": [
+              "trombone"
+            ]
+          }
+        },
+        "E4_cnn4_specaug_posweight": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "piano",
+              "synthesizer",
+              "trombone"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "guitar",
+              "piano",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "cello",
+              "clarinet",
+              "piano",
+              "trombone"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "mandolin",
+              "piano",
+              "synthesizer",
+              "trombone"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "piano",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "cello",
+              "clarinet",
+              "flute",
+              "piano",
+              "trombone"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "guitar",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "accordion"
+            ],
+            "extras": [
+              "trombone"
+            ]
+          }
+        }
+      }
+    },
+    "867663": {
+      "tags": [
+        "accordion",
+        "guitar",
+        "saxophone",
+        "trumpet",
+        "violin"
+      ],
+      "models": {
+        "baseline": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer",
+              "trombone",
+              "ukulele"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "banjo",
+              "clarinet",
+              "guitar",
+              "mandolin",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "accordion"
+            ],
+            "extras": [
+              "banjo",
+              "clarinet",
+              "mandolin",
+              "trombone"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer",
+              "trombone",
+              "ukulele"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "banjo",
+              "clarinet",
+              "guitar",
+              "mandolin",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "accordion"
+            ],
+            "extras": [
+              "banjo",
+              "clarinet",
+              "mandolin",
+              "trombone"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "guitar",
+              "mandolin",
+              "saxophone",
+              "trombone",
+              "trumpet"
+            ],
+            "hits": [
+              "guitar",
+              "saxophone",
+              "trumpet"
+            ],
+            "misses": [
+              "accordion",
+              "violin"
+            ],
+            "extras": [
+              "mandolin",
+              "trombone"
+            ]
+          }
+        },
+        "E4_cnn4_specaug_posweight": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer",
+              "trombone",
+              "ukulele"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "trombone"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer",
+              "trombone",
+              "ukulele"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "mandolin",
+              "piano",
+              "trombone"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "flute",
+              "guitar",
+              "mandolin",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "guitar",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "accordion"
+            ],
+            "extras": [
+              "flute",
+              "mandolin",
+              "trombone"
+            ]
+          }
+        }
+      }
+    },
+    "20744": {
+      "tags": [
+        "guitar",
+        "organ",
+        "piano",
+        "trumpet",
+        "violin"
+      ],
+      "models": {
+        "baseline": {
+          "other_max_0.5": {
+            "predicted": [
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "guitar",
+              "piano",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "organ"
+            ],
+            "extras": [
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "saxophone",
+              "synthesizer",
+              "trombone"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "guitar",
+              "saxophone",
+              "trumpet"
+            ],
+            "hits": [
+              "guitar",
+              "trumpet"
+            ],
+            "misses": [
+              "organ",
+              "piano",
+              "violin"
+            ],
+            "extras": [
+              "saxophone"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "guitar",
+              "piano",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "organ"
+            ],
+            "extras": [
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "saxophone",
+              "synthesizer",
+              "trombone"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "guitar",
+              "saxophone",
+              "trumpet"
+            ],
+            "hits": [
+              "guitar",
+              "trumpet"
+            ],
+            "misses": [
+              "organ",
+              "piano",
+              "violin"
+            ],
+            "extras": [
+              "saxophone"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "guitar",
+              "saxophone",
+              "trumpet"
+            ],
+            "hits": [
+              "guitar",
+              "trumpet"
+            ],
+            "misses": [
+              "organ",
+              "piano",
+              "violin"
+            ],
+            "extras": [
+              "saxophone"
+            ]
+          }
+        },
+        "E4_cnn4_specaug_posweight": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "guitar",
+              "organ",
+              "piano",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "saxophone",
+              "synthesizer",
+              "trombone"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "cello",
+              "flute",
+              "guitar",
+              "violin"
+            ],
+            "hits": [
+              "guitar",
+              "violin"
+            ],
+            "misses": [
+              "organ",
+              "piano",
+              "trumpet"
+            ],
+            "extras": [
+              "cello",
+              "flute"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "guitar",
+              "piano",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "organ"
+            ],
+            "extras": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "saxophone",
+              "synthesizer",
+              "trombone"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "cello",
+              "flute",
+              "mallet_percussion",
+              "piano",
+              "violin"
+            ],
+            "hits": [
+              "piano",
+              "violin"
+            ],
+            "misses": [
+              "guitar",
+              "organ",
+              "trumpet"
+            ],
+            "extras": [
+              "cello",
+              "flute",
+              "mallet_percussion"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "flute",
+              "mallet_percussion",
+              "violin"
+            ],
+            "hits": [
+              "violin"
+            ],
+            "misses": [
+              "guitar",
+              "organ",
+              "piano",
+              "trumpet"
+            ],
+            "extras": [
+              "flute",
+              "mallet_percussion"
+            ]
+          }
+        }
+      }
+    },
+    "783235": {
+      "tags": [
+        "cello",
+        "organ",
+        "piano",
+        "synthesizer",
+        "violin"
+      ],
+      "models": {
+        "baseline": {
+          "other_max_0.5": {
+            "predicted": [
+              "cello",
+              "guitar",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "guitar",
+              "saxophone"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "cello",
+              "guitar",
+              "piano",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "violin"
+            ],
+            "misses": [
+              "organ",
+              "synthesizer"
+            ],
+            "extras": [
+              "guitar"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "cello",
+              "guitar",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "guitar",
+              "saxophone"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "cello",
+              "guitar",
+              "piano",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "violin"
+            ],
+            "misses": [
+              "organ",
+              "synthesizer"
+            ],
+            "extras": [
+              "guitar"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "cello",
+              "guitar",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "misses": [
+              "organ"
+            ],
+            "extras": [
+              "guitar"
+            ]
+          }
+        },
+        "E4_cnn4_specaug_posweight": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "clarinet",
+              "flute",
+              "mallet_percussion"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "clarinet",
+              "flute",
+              "mallet_percussion"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "clarinet",
+              "flute",
+              "mallet_percussion"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "clarinet",
+              "flute",
+              "mallet_percussion"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "cello",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "flute",
+              "mallet_percussion"
+            ]
+          }
+        }
+      }
+    },
+    "6257": {
+      "tags": [
+        "cello",
+        "clarinet",
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "models": {
+        "baseline": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "banjo",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "ukulele"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "banjo",
+              "cello",
+              "guitar",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "clarinet",
+              "trombone"
+            ],
+            "extras": [
+              "banjo",
+              "guitar",
+              "mandolin",
+              "piano",
+              "saxophone"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "banjo",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "ukulele"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "banjo",
+              "cello",
+              "guitar",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "clarinet",
+              "trombone"
+            ],
+            "extras": [
+              "banjo",
+              "guitar",
+              "mandolin",
+              "piano",
+              "saxophone"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "guitar",
+              "saxophone",
+              "trombone",
+              "trumpet"
+            ],
+            "hits": [
+              "trombone",
+              "trumpet"
+            ],
+            "misses": [
+              "cello",
+              "clarinet",
+              "violin"
+            ],
+            "extras": [
+              "guitar",
+              "saxophone"
+            ]
+          }
+        },
+        "E4_cnn4_specaug_posweight": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "banjo",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "ukulele"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "piano",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "flute",
+              "piano",
+              "saxophone"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "banjo",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "flute",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "clarinet"
+            ],
+            "extras": [
+              "accordion",
+              "flute",
+              "mandolin",
+              "piano",
+              "saxophone"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "banjo",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "cello",
+              "clarinet"
+            ],
+            "extras": [
+              "banjo",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "saxophone"
+            ]
+          }
+        }
+      }
+    },
+    "6258": {
+      "tags": [
+        "cello",
+        "clarinet",
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "models": {
+        "baseline": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "guitar",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "clarinet"
+            ],
+            "extras": [
+              "accordion",
+              "guitar",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "guitar",
+              "saxophone",
+              "violin"
+            ],
+            "hits": [
+              "violin"
+            ],
+            "misses": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "guitar",
+              "saxophone"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "guitar",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "clarinet"
+            ],
+            "extras": [
+              "accordion",
+              "guitar",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "guitar",
+              "saxophone",
+              "violin"
+            ],
+            "hits": [
+              "violin"
+            ],
+            "misses": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "guitar",
+              "saxophone"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "cello",
+              "guitar",
+              "saxophone",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "violin"
+            ],
+            "misses": [
+              "clarinet",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "guitar",
+              "saxophone"
+            ]
+          }
+        },
+        "E4_cnn4_specaug_posweight": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "flute",
+              "organ",
+              "piano",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "violin"
+            ],
+            "misses": [
+              "clarinet",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "accordion",
+              "flute",
+              "organ",
+              "piano"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "flute",
+              "mallet_percussion",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "violin"
+            ],
+            "misses": [
+              "clarinet",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "accordion",
+              "flute",
+              "mallet_percussion",
+              "piano",
+              "synthesizer"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "flute",
+              "mallet_percussion",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "violin"
+            ],
+            "misses": [
+              "clarinet",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "accordion",
+              "flute",
+              "mallet_percussion",
+              "piano",
+              "synthesizer"
+            ]
+          }
+        }
+      }
+    },
+    "398172": {
+      "tags": [
+        "cello",
+        "piano",
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "models": {
+        "baseline": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "guitar",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "violin"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "accordion",
+              "clarinet",
+              "guitar",
+              "organ",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "cello",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "violin"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "synthesizer"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "guitar",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "violin"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "accordion",
+              "clarinet",
+              "guitar",
+              "organ",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "cello",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "violin"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "synthesizer"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "cello",
+              "guitar",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "violin"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "guitar",
+              "synthesizer"
+            ]
+          }
+        },
+        "E4_cnn4_specaug_posweight": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "synthesizer",
+              "trombone",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "trombone",
+              "violin"
+            ],
+            "misses": [
+              "trumpet"
+            ],
+            "extras": [
+              "accordion",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "synthesizer"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "cello",
+              "clarinet",
+              "flute",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "violin"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "clarinet",
+              "flute",
+              "organ",
+              "synthesizer"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "violin"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "accordion",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "synthesizer"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "violin"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "synthesizer"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "cello",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "piano",
+              "violin"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "synthesizer"
+            ]
+          }
+        }
+      }
+    },
+    "398174": {
+      "tags": [
+        "cello",
+        "clarinet",
+        "trombone",
+        "trumpet",
+        "violin"
+      ],
+      "models": {
+        "baseline": {
+          "other_max_0.5": {
+            "predicted": [
+              "cello",
+              "clarinet",
+              "guitar",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "violin"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "guitar",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "cello",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "violin"
+            ],
+            "misses": [
+              "clarinet",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "organ",
+              "piano",
+              "synthesizer"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "cello",
+              "clarinet",
+              "guitar",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "violin"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "guitar",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "cello",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "violin"
+            ],
+            "misses": [
+              "clarinet",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "organ",
+              "piano",
+              "synthesizer"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "cello",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "violin"
+            ],
+            "misses": [
+              "clarinet",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "piano",
+              "synthesizer"
+            ]
+          }
+        },
+        "E4_cnn4_specaug_posweight": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "flute",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "violin"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "accordion",
+              "flute",
+              "organ",
+              "piano",
+              "synthesizer"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "accordion",
+              "flute",
+              "mallet_percussion",
+              "organ",
+              "piano",
+              "saxophone",
+              "synthesizer"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "violin"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "accordion",
+              "flute",
+              "organ",
+              "piano",
+              "synthesizer"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "organ",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "violin"
+            ],
+            "misses": [
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "accordion",
+              "flute",
+              "organ",
+              "piano",
+              "synthesizer"
+            ]
+          }
+        }
+      }
+    },
+    "585147": {
+      "tags": [
+        "cello",
+        "clarinet",
+        "flute",
+        "guitar",
+        "organ",
+        "piano",
+        "saxophone",
+        "synthesizer",
+        "trombone",
+        "trumpet",
+        "ukulele",
+        "violin"
+      ],
+      "models": {
+        "baseline": {
+          "other_max_0.5": {
+            "predicted": [
+              "banjo",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele"
+            ],
+            "hits": [
+              "guitar",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele"
+            ],
+            "misses": [
+              "cello",
+              "clarinet",
+              "flute",
+              "organ",
+              "violin"
+            ],
+            "extras": [
+              "banjo",
+              "mallet_percussion",
+              "mandolin"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "guitar",
+              "mallet_percussion",
+              "synthesizer"
+            ],
+            "hits": [
+              "guitar",
+              "synthesizer"
+            ],
+            "misses": [
+              "cello",
+              "clarinet",
+              "flute",
+              "organ",
+              "piano",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "extras": [
+              "mallet_percussion"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "banjo",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele"
+            ],
+            "hits": [
+              "guitar",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele"
+            ],
+            "misses": [
+              "cello",
+              "clarinet",
+              "flute",
+              "organ",
+              "violin"
+            ],
+            "extras": [
+              "banjo",
+              "mallet_percussion",
+              "mandolin"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "guitar",
+              "mallet_percussion",
+              "synthesizer"
+            ],
+            "hits": [
+              "guitar",
+              "synthesizer"
+            ],
+            "misses": [
+              "cello",
+              "clarinet",
+              "flute",
+              "organ",
+              "piano",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "extras": [
+              "mallet_percussion"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "synthesizer"
+            ],
+            "hits": [
+              "synthesizer"
+            ],
+            "misses": [
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "organ",
+              "piano",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "extras": []
+          }
+        },
+        "E4_cnn4_specaug_posweight": {
+          "other_max_0.5": {
+            "predicted": [
+              "cello",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "flute",
+              "guitar",
+              "piano",
+              "synthesizer",
+              "ukulele",
+              "violin"
+            ],
+            "misses": [
+              "clarinet",
+              "organ",
+              "saxophone",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "mallet_percussion",
+              "mandolin"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "piano",
+              "synthesizer"
+            ],
+            "hits": [
+              "piano",
+              "synthesizer"
+            ],
+            "misses": [
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "organ",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "extras": []
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "cello",
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "flute",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "ukulele",
+              "violin"
+            ],
+            "misses": [
+              "clarinet",
+              "guitar",
+              "organ",
+              "trombone",
+              "trumpet"
+            ],
+            "extras": [
+              "mallet_percussion",
+              "mandolin"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "flute",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "synthesizer"
+            ],
+            "hits": [
+              "flute",
+              "piano",
+              "synthesizer"
+            ],
+            "misses": [
+              "cello",
+              "clarinet",
+              "guitar",
+              "organ",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "extras": [
+              "mallet_percussion",
+              "mandolin"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "synthesizer"
+            ],
+            "hits": [
+              "synthesizer"
+            ],
+            "misses": [
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "organ",
+              "piano",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "extras": []
+          }
+        }
+      }
+    },
+    "556349": {
+      "tags": [
+        "accordion",
+        "cello",
+        "clarinet",
+        "flute",
+        "guitar",
+        "piano",
+        "saxophone",
+        "synthesizer",
+        "trumpet",
+        "violin"
+      ],
+      "models": {
+        "baseline": {
+          "other_max_0.5": {
+            "predicted": [
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "accordion"
+            ],
+            "extras": [
+              "banjo",
+              "mandolin",
+              "trombone",
+              "ukulele"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "guitar",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "trumpet"
+            ],
+            "hits": [
+              "guitar",
+              "piano",
+              "saxophone",
+              "trumpet"
+            ],
+            "misses": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "synthesizer",
+              "violin"
+            ],
+            "extras": [
+              "mandolin"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "ukulele",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "accordion"
+            ],
+            "extras": [
+              "banjo",
+              "mandolin",
+              "trombone",
+              "ukulele"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "guitar",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "trumpet"
+            ],
+            "hits": [
+              "guitar",
+              "piano",
+              "saxophone",
+              "trumpet"
+            ],
+            "misses": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "synthesizer",
+              "violin"
+            ],
+            "extras": [
+              "mandolin"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "saxophone",
+              "trombone",
+              "trumpet"
+            ],
+            "hits": [
+              "guitar",
+              "saxophone",
+              "trumpet"
+            ],
+            "misses": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "extras": [
+              "mallet_percussion",
+              "mandolin",
+              "trombone"
+            ]
+          }
+        },
+        "E4_cnn4_specaug_posweight": {
+          "other_max_0.5": {
+            "predicted": [
+              "accordion",
+              "banjo",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "banjo",
+              "trombone"
+            ]
+          },
+          "other_mean_0.5": {
+            "predicted": [
+              "cello",
+              "clarinet",
+              "guitar",
+              "saxophone",
+              "trombone",
+              "trumpet"
+            ],
+            "hits": [
+              "cello",
+              "clarinet",
+              "guitar",
+              "saxophone",
+              "trumpet"
+            ],
+            "misses": [
+              "accordion",
+              "flute",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "extras": [
+              "trombone"
+            ]
+          },
+          "other_max_tuned": {
+            "predicted": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "guitar",
+              "piano",
+              "saxophone",
+              "synthesizer",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [],
+            "extras": [
+              "mallet_percussion",
+              "mandolin",
+              "trombone"
+            ]
+          },
+          "other_mean_tuned": {
+            "predicted": [
+              "cello",
+              "flute",
+              "guitar",
+              "mandolin",
+              "piano",
+              "saxophone",
+              "trombone",
+              "trumpet",
+              "violin"
+            ],
+            "hits": [
+              "cello",
+              "flute",
+              "guitar",
+              "piano",
+              "saxophone",
+              "trumpet",
+              "violin"
+            ],
+            "misses": [
+              "accordion",
+              "clarinet",
+              "synthesizer"
+            ],
+            "extras": [
+              "mandolin",
+              "trombone"
+            ]
+          },
+          "mix_mean_tuned": {
+            "predicted": [
+              "guitar",
+              "mallet_percussion",
+              "mandolin",
+              "saxophone",
+              "trombone",
+              "trumpet"
+            ],
+            "hits": [
+              "guitar",
+              "saxophone",
+              "trumpet"
+            ],
+            "misses": [
+              "accordion",
+              "cello",
+              "clarinet",
+              "flute",
+              "piano",
+              "synthesizer",
+              "violin"
+            ],
+            "extras": [
+              "mallet_percussion",
+              "mandolin",
+              "trombone"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "summary": {
+    "baseline/other_max_0.5": {
+      "tag_recall": 0.793,
+      "extras_per_track": 6.71
+    },
+    "baseline/other_mean_0.5": {
+      "tag_recall": 0.439,
+      "extras_per_track": 2.43
+    },
+    "baseline/other_max_tuned": {
+      "tag_recall": 0.793,
+      "extras_per_track": 6.71
+    },
+    "baseline/other_mean_tuned": {
+      "tag_recall": 0.439,
+      "extras_per_track": 2.43
+    },
+    "baseline/mix_mean_tuned": {
+      "tag_recall": 0.341,
+      "extras_per_track": 1.93
+    },
+    "E4_cnn4_specaug_posweight/other_max_0.5": {
+      "tag_recall": 0.89,
+      "extras_per_track": 6.79
+    },
+    "E4_cnn4_specaug_posweight/other_mean_0.5": {
+      "tag_recall": 0.561,
+      "extras_per_track": 3.36
+    },
+    "E4_cnn4_specaug_posweight/other_max_tuned": {
+      "tag_recall": 0.841,
+      "extras_per_track": 6.79
+    },
+    "E4_cnn4_specaug_posweight/other_mean_tuned": {
+      "tag_recall": 0.585,
+      "extras_per_track": 4.21
+    },
+    "E4_cnn4_specaug_posweight/mix_mean_tuned": {
+      "tag_recall": 0.451,
+      "extras_per_track": 3.21
+    }
+  }
+}

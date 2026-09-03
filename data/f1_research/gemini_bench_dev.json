@@ -1,0 +1,270 @@
+{
+  "P1_basic": {
+    "macro_f1": 0.17817460317460315,
+    "tokens": {
+      "prompt": 5415,
+      "output": 418,
+      "thoughts": 8388
+    },
+    "latency": {
+      "mean_s": 7.696983178456624,
+      "p90_s": 8.341770219802855
+    },
+    "preds": {
+      "011663_57600": [
+        "accordion",
+        "cymbals",
+        "drums"
+      ],
+      "011748_30720": [
+        "accordion",
+        "bass",
+        "clarinet",
+        "cymbals",
+        "drums"
+      ],
+      "094023_1774080": [
+        "cymbals",
+        "drums",
+        "saxophone",
+        "trombone"
+      ],
+      "112264_218880": [
+        "banjo",
+        "voice"
+      ],
+      "027233_69120": [
+        "bass",
+        "cymbals",
+        "drums",
+        "guitar",
+        "saxophone"
+      ],
+      "107470_57600": [
+        "guitar",
+        "voice"
+      ],
+      "011583_172800": [
+        "bass",
+        "clarinet",
+        "cymbals",
+        "drums",
+        "trumpet"
+      ],
+      "109419_80640": [
+        "mallet_percussion",
+        "violin"
+      ],
+      "058124_230400": [
+        "accordion",
+        "bass"
+      ],
+      "123692_3840": [
+        "accordion",
+        "bass",
+        "cymbals",
+        "drums",
+        "guitar",
+        "voice"
+      ],
+      "057647_7680": [
+        "guitar",
+        "mandolin"
+      ],
+      "068855_61440": [
+        "banjo"
+      ],
+      "112259_218880": [
+        "guitar",
+        "voice"
+      ],
+      "100962_142080": [
+        "bass",
+        "cymbals",
+        "drums",
+        "saxophone"
+      ],
+      "149088_88320": [
+        "guitar"
+      ]
+    }
+  },
+  "P2_conservative": {
+    "macro_f1": 0.21829365079365082,
+    "tokens": {
+      "prompt": 5790,
+      "output": 388,
+      "thoughts": 7682
+    },
+    "latency": {
+      "mean_s": 3.9365018208821616,
+      "p90_s": 5.353050708770752
+    },
+    "preds": {
+      "011663_57600": [
+        "accordion",
+        "cymbals",
+        "drums"
+      ],
+      "011748_30720": [
+        "accordion",
+        "drums"
+      ],
+      "094023_1774080": [
+        "cymbals",
+        "drums",
+        "saxophone",
+        "trombone",
+        "trumpet"
+      ],
+      "112264_218880": [
+        "banjo",
+        "voice"
+      ],
+      "027233_69120": [
+        "banjo",
+        "bass",
+        "clarinet",
+        "drums"
+      ],
+      "107470_57600": [
+        "guitar",
+        "voice"
+      ],
+      "011583_172800": [
+        "banjo",
+        "bass",
+        "clarinet",
+        "cymbals",
+        "drums",
+        "trombone",
+        "trumpet"
+      ],
+      "109419_80640": [
+        "guitar",
+        "violin"
+      ],
+      "058124_230400": [
+        "accordion",
+        "saxophone"
+      ],
+      "123692_3840": [
+        "bass",
+        "guitar",
+        "violin",
+        "voice"
+      ],
+      "057647_7680": [
+        "mandolin"
+      ],
+      "068855_61440": [
+        "banjo",
+        "guitar"
+      ],
+      "112259_218880": [
+        "guitar",
+        "voice"
+      ],
+      "100962_142080": [
+        "bass",
+        "drums",
+        "violin"
+      ],
+      "149088_88320": [
+        "guitar"
+      ]
+    }
+  },
+  "P3_reasoned": {
+    "macro_f1": 0.22916666666666669,
+    "tokens": {
+      "prompt": 6645,
+      "output": 542,
+      "thoughts": 7029
+    },
+    "latency": {
+      "mean_s": 3.974062712987264,
+      "p90_s": 5.416219139099121
+    },
+    "preds": {
+      "011663_57600": [
+        "accordion",
+        "bass",
+        "cymbals",
+        "drums",
+        "saxophone"
+      ],
+      "011748_30720": [
+        "accordion"
+      ],
+      "094023_1774080": [
+        "cymbals",
+        "drums",
+        "trombone",
+        "trumpet"
+      ],
+      "112264_218880": [
+        "banjo",
+        "voice"
+      ],
+      "027233_69120": [
+        "bass",
+        "guitar",
+        "violin",
+        "voice"
+      ],
+      "107470_57600": [
+        "guitar",
+        "mandolin",
+        "voice"
+      ],
+      "011583_172800": [
+        "bass",
+        "cymbals",
+        "drums",
+        "guitar",
+        "saxophone",
+        "trombone",
+        "trumpet"
+      ],
+      "109419_80640": [
+        "accordion",
+        "violin"
+      ],
+      "058124_230400": [
+        "bass",
+        "guitar",
+        "saxophone"
+      ],
+      "123692_3840": [
+        "accordion",
+        "bass",
+        "guitar",
+        "voice"
+      ],
+      "057647_7680": [
+        "mandolin"
+      ],
+      "068855_61440": [
+        "banjo",
+        "guitar"
+      ],
+      "112259_218880": [
+        "flute",
+        "guitar",
+        "voice"
+      ],
+      "100962_142080": [
+        "bass",
+        "cymbals",
+        "drums",
+        "guitar",
+        "violin"
+      ],
+      "149088_88320": [
+        "guitar"
+      ]
+    }
+  },
+  "best": "P3_reasoned"
+}

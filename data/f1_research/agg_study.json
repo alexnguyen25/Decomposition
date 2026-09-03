@@ -1,0 +1,34 @@
+{
+  "E4/max": {
+    "recall": 0.8902439024390244,
+    "extras_per_track": 6.785714285714286
+  },
+  "E4/mean": {
+    "recall": 0.5609756097560976,
+    "extras_per_track": 3.357142857142857
+  },
+  "E4/top3mean": {
+    "recall": 0.8414634146341463,
+    "extras_per_track": 6.214285714285714
+  },
+  "E4/top25pct": {
+    "recall": 0.7804878048780488,
+    "extras_per_track": 5.357142857142857
+  },
+  "E7_panns/max": {
+    "recall": 0.6219512195121951,
+    "extras_per_track": 3.2857142857142856
+  },
+  "E7_panns/mean": {
+    "recall": 0.2926829268292683,
+    "extras_per_track": 0.5
+  },
+  "E7_panns/top3mean": {
+    "recall": 0.5853658536585366,
+    "extras_per_track": 2.9285714285714284
+  },
+  "E7_panns/top25pct": {
+    "recall": 0.573170731707317,
+    "extras_per_track": 2.7142857142857144
+  }
+}

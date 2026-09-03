@@ -1,0 +1,26 @@
+{
+  "song_duration_s": 270.8,
+  "timings_s": {
+    "load_audio_s": 0.93,
+    "demucs_model_load_s": 0.18,
+    "demucs_separate_s": 115.32,
+    "resample_s": 0.05,
+    "cnn14_load_s": 0.76,
+    "classify_cnn14_e7_s": 5.14
+  },
+  "total_s": 122.4,
+  "memory_gb": {
+    "start_rss_gb": 0.16,
+    "after_load_rss_gb": 0.42,
+    "after_demucs_load_rss_gb": 0.68,
+    "after_separate_rss_gb": 2.32,
+    "after_cnn14_load_rss_gb": 2.32,
+    "peak_rss_gb": 2.99
+  },
+  "n_chunks": 27,
+  "top_probs": {
+    "flute": 0.3219663202762604,
+    "piano": 0.9996967315673828,
+    "synthesizer": 0.4582795798778534
+  }
+}
