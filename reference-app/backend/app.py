@@ -25,13 +25,12 @@ from collections import defaultdict
 from pathlib import Path
 
 import librosa
+import settings
 from fastapi import FastAPI, HTTPException, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
-from pydantic import BaseModel
-
-import settings
 from pipeline import analyze
+from pydantic import BaseModel
 
 app = FastAPI(title="Decomposition API")
 
@@ -67,7 +66,10 @@ def _worker():
         job = JOBS[job_id]
         job.update(status="running", progress=0.01, stage="Starting")
         try:
-            def cb(frac, stage):
+            # job is bound as a default so the closure can't be left
+            # pointing at the next iteration's job if it ever outlives
+            # this one.
+            def cb(frac, stage, job=job):
                 job["progress"], job["stage"] = round(frac, 3), stage
 
             out_dir = settings.WORK_DIR / job_id
@@ -75,7 +77,7 @@ def _worker():
             result["stems"] = {k: f"/api/files/{job_id}/{v}"
                                for k, v in result["stems"].items()}
             job.update(status="done", result=result, done_at=time.time())
-        except Exception as e:                      # noqa: BLE001
+        except Exception as e:
             job.update(status="error", error=str(e)[:300])
         finally:
             Path(job["upload_path"]).unlink(missing_ok=True)  # delete upload
@@ -132,7 +134,7 @@ async def create_job(request: Request, file: UploadFile):
     # duration check needs a decode; do it now so bad files fail fast.
     try:
         duration = librosa.get_duration(path=str(upload_path))
-    except Exception as e:                          # noqa: BLE001
+    except Exception as e:
         upload_path.unlink(missing_ok=True)
         raise HTTPException(400, "Could not decode audio.") from e
     if not settings.MIN_DURATION_S <= duration <= settings.MAX_DURATION_S:

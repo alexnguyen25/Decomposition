@@ -12,13 +12,11 @@ from pathlib import Path
 
 import numpy as np
 import torch
+from settings import CLASSIFIER_HEAD, CONFIDENCE_THRESHOLD, DEAD_WEIGHT, MODEL_DIR
 from torch import nn
 
-from settings import (CLASSIFIER_HEAD, CONFIDENCE_THRESHOLD, DEAD_WEIGHT,
-                      MODEL_DIR)
-
 sys.path.insert(0, str(Path(__file__).parent / "beats"))
-from BEATs import BEATs, BEATsConfig  # noqa: E402
+from BEATs import BEATs, BEATsConfig
 
 # MPS (Apple GPU) if available; CPU otherwise (that's what HF Spaces gives).
 DEVICE = torch.device("mps" if torch.backends.mps.is_available() else "cpu")

@@ -12,7 +12,6 @@ Run:  cd reference-app/backend && ../../../.venv/bin/python make_timelines.py
 import json
 
 import librosa
-
 import settings
 from models_util import classify_other_stem
 from pipeline import SR_NATIVE, STEM_ORDER, _activity_envelope

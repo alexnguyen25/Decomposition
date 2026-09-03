@@ -123,7 +123,7 @@ def test_wrong_bpm_flagged_right_bpm_ok():
 
 
 def test_wrong_key_flagged():
-    ok, v = _check("The song is in C major.")
+    ok, _ = _check("The song is in C major.")
     assert not ok
     ok, _ = _check("The song is in A minor.")
     assert ok

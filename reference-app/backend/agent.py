@@ -19,8 +19,13 @@ import urllib.error
 import urllib.request
 
 from models_util import CLASS_MAP
-from settings import (CHAT_MAX_ROUNDS, LLM_API_KEY, LLM_BASE_URL, LLM_MODEL,
-                      LLM_TIMEOUT_S)
+from settings import (
+    CHAT_MAX_ROUNDS,
+    LLM_API_KEY,
+    LLM_BASE_URL,
+    LLM_MODEL,
+    LLM_TIMEOUT_S,
+)
 
 # Generic stem words -> the presence flag that makes them true for THIS track.
 # Previously an unconditional allowlist, which let the agent assert "there is a
@@ -115,7 +120,7 @@ def _tool_get_stem_activity(result: dict, stem: str) -> dict:
     hop = tl.get("hop_s", 1.0)
     thresh = 0.15                       # of the stem's own peak loudness
     spans, run_start = [], None
-    for i, v in enumerate(env + [0.0]):
+    for i, v in enumerate([*env, 0.0]):
         if v >= thresh and run_start is None:
             run_start = i * hop
         elif v < thresh and run_start is not None:
@@ -277,10 +282,9 @@ def check_grounding(result: dict, reply: str,
     for m in re.finditer(r"\b([a-g](?:\s?(?:sharp|flat)|[#b])?)\s+(major|minor)\b",
                          text):
         claimed = f"{m.group(1).strip()} {m.group(2)}".replace("#", " sharp")
-        if claimed != key.replace("#", " sharp"):
-            if not _is_negated(text, m.start()):
-                violations.append(f"claimed key '{m.group(0)}' "
-                                  f"(analysis: {key or 'unknown'})")
+        if claimed != key.replace("#", " sharp") and not _is_negated(text, m.start()):
+            violations.append(f"claimed key '{m.group(0)}' "
+                              f"(analysis: {key or 'unknown'})")
 
     return (not violations, violations)
 

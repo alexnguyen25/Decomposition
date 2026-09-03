@@ -27,7 +27,7 @@ jobs:
           pip install pytest ruff "numpy>=1.26,<2" "librosa>=0.10" "soundfile>=0.12"
 
       - name: Lint
-        run: ruff check src tests scripts evals
+        run: ruff check src tests scripts evals reference-app/backend
 
       - name: Tests
         run: python -m pytest -q

@@ -16,11 +16,10 @@ import re
 import urllib.error
 import urllib.request
 
-from settings import LLM_API_KEY, LLM_BASE_URL, LLM_MODEL, LLM_TIMEOUT_S
-
 # word-boundary matching matters: a naive substring check flags the word
 # "organic" as the instrument "organ" (found the hard way — see research doc).
 from models_util import CLASS_MAP
+from settings import LLM_API_KEY, LLM_BASE_URL, LLM_MODEL, LLM_TIMEOUT_S
 
 GENERIC_OK = {"vocals", "voice", "drums", "bass"}
 

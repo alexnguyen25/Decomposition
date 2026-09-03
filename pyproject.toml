@@ -3,14 +3,20 @@ target-version = "py310"
 line-length = 88
 # Vendored third-party code is kept as close to upstream as possible so it can
 # be re-synced; linting it would mean rewriting someone else's file.
-extend-exclude = ["src/classification/beats", "data/f1_research", ".venv"]
+extend-exclude = [
+    "src/classification/beats",
+    "reference-app/backend/beats",  # the same vendored BEATs, second copy
+    "data/f1_research",
+    ".venv",
+]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
 ignore = [
     "E501",    # line length is handled by the formatter, not enforced here
     "B008",    # FastAPI/typer-style defaults in signatures are idiomatic
-    "RUF002",  # en dashes in prose docstrings are intentional
+    "RUF001",  # en dashes in prose and user-facing strings are intentional
+    "RUF002",
     "RUF003",
 ]
 
