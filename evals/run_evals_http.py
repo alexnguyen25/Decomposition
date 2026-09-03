@@ -25,6 +25,7 @@ Usage
 import argparse
 import json
 import re
+import ssl
 import sys
 import time
 import urllib.error
@@ -43,13 +44,34 @@ REFUSAL_MARKERS = ("not", "n't", "no ", "unable", "only", "beyond",
                    "unavailable", "unknown")
 
 
+def _ssl_context() -> ssl.SSLContext | None:
+    """CA bundle for HTTPS targets.
+
+    A framework Python on macOS ships without a usable CA store, so verifying
+    an https:// deployment fails with CERTIFICATE_VERIFY_FAILED even though
+    curl works. certifi is already a dependency; use its bundle rather than
+    disabling verification, which would make this harness lie about reachability.
+    """
+    try:
+        import certifi
+    except ImportError:
+        return None
+    return ssl.create_default_context(cafile=certifi.where())
+
+
+_CONTEXT = _ssl_context()
+
+
 def ask(base_url: str, track: str, question: str, timeout: int) -> dict:
     request = urllib.request.Request(
         f"{base_url.rstrip('/')}/api/chat/{track}",
         data=json.dumps({"messages": [{"role": "user", "content": question}]}).encode(),
         headers={"Content-Type": "application/json"},
     )
-    with urllib.request.urlopen(request, timeout=timeout) as response:
+    kwargs = {"timeout": timeout}
+    if base_url.startswith("https://") and _CONTEXT is not None:
+        kwargs["context"] = _CONTEXT
+    with urllib.request.urlopen(request, **kwargs) as response:
         return json.load(response)
 
 
@@ -79,6 +101,12 @@ def main() -> None:
     parser.add_argument("--label", default="local",
                         help="tag for the output file, e.g. the model name")
     parser.add_argument("--timeout", type=int, default=180)
+    parser.add_argument("--delay", type=float, default=45.0,
+                        help="seconds between questions. Groq's free tier was "
+                             "measured at 4 requests/minute (not the 30 its docs "
+                             "imply) and one question costs 1-3 provider calls, "
+                             "so a full run takes ~25 minutes. Lower it for a "
+                             "local Ollama endpoint.")
     args = parser.parse_args()
 
     manifest = {ex["id"]: ex["result"] for ex in json.loads(MANIFEST.read_text())}
@@ -90,7 +118,9 @@ def main() -> None:
     disagreements = 0
     started = time.time()
 
-    for question in questions:
+    for position, question in enumerate(questions):
+        if position:
+            time.sleep(args.delay)
         result = manifest[question["track"]]
         t0 = time.time()
         try:
@@ -105,6 +135,19 @@ def main() -> None:
         reply = response.get("reply", "")
         trace = response.get("trace", [])
         shipped_verdict = bool(response.get("grounded"))
+
+        # The app degrades to a fixed line when the provider is unreachable.
+        # That text asserts nothing, so the grounding checker calls it clean —
+        # which once produced a "0% hallucination, 6/6 traps" summary for a run
+        # where all 30 calls had failed. A metric that scores an outage as a
+        # pass is worse than no metric: count these as errors and refuse to
+        # summarise a run that contains them.
+        if reply.startswith("The chat model isn't reachable"):
+            print(f"✗ [{question['category']:12s}] {question['id']:22s} "
+                  f"PROVIDER UNREACHABLE")
+            rows.append({**question, "reply": reply,
+                         "error": "provider unreachable", "passed": False})
+            continue
 
         # Independent re-check. Tool outputs are not returned by the API, so
         # replay is impossible here — instead allow anything the analysis or a
@@ -135,9 +178,18 @@ def main() -> None:
         print(f"{'✓' if passed else '✗'} [{question['category']:12s}] "
               f"{question['id']:22s} {latency:5.1f}s  {why}")
 
-    graded = [r for r in rows if "reply" in r]
+    graded = [r for r in rows if "reply" in r and not r.get("error")]
+    failed = [r for r in rows if r.get("error")]
+    if failed:
+        print(f"\n{len(failed)}/{len(rows)} questions failed to reach the model "
+              f"({failed[0]['error']}).")
     if not graded:
-        sys.exit("no questions completed — is the site running?")
+        sys.exit("no usable answers — nothing to score. Check the provider "
+                 "configuration and the server logs before trusting any number.")
+    if failed:
+        sys.exit(f"refusing to summarise: {len(failed)} of {len(rows)} questions "
+                 "never got an answer, so every rate below would be computed "
+                 "over a biased subset. Fix the provider and re-run.")
 
     ungrounded = [r for r in graded if not r["grounded_independent"]]
     by_category: dict[str, list[bool]] = {}

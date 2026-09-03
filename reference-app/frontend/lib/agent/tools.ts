@@ -157,8 +157,18 @@ export const TOOLS_SPEC = [
       parameters: {
         type: "object",
         properties: {
-          start_s: { type: "number", description: "window start in seconds" },
-          end_s: { type: "number", description: "window end in seconds" },
+          // ["number", "null"], not "number": models signal "whole song" by
+          // sending null for both bounds, and Groq validates tool arguments
+          // against this schema SERVER-SIDE and rejects the call with a 400
+          // before our own charitable coercion in numberOrNull ever runs.
+          start_s: {
+            type: ["number", "null"],
+            description: "window start in seconds; null or omitted for the whole song",
+          },
+          end_s: {
+            type: ["number", "null"],
+            description: "window end in seconds; null or omitted for the whole song",
+          },
         },
       },
     },

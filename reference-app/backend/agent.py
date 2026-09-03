@@ -145,11 +145,15 @@ TOOLS_SPEC = [
         "description": "Instruments detected by the classifier. Without "
                        "arguments: the whole song. With start_s/end_s "
                        "(seconds): what was detected inside that window.",
+        # ["number", "null"], not "number": models signal "whole song" by
+        # sending null for both bounds, and some providers (Groq) validate
+        # tool arguments against this schema server-side and reject the call
+        # before _num_or_none ever gets to coerce it.
         "parameters": {"type": "object", "properties": {
-            "start_s": {"type": "number",
-                        "description": "window start in seconds"},
-            "end_s": {"type": "number",
-                      "description": "window end in seconds"}}}}},
+            "start_s": {"type": ["number", "null"],
+                        "description": "window start in seconds; null for whole song"},
+            "end_s": {"type": ["number", "null"],
+                      "description": "window end in seconds; null for whole song"}}}}},
     {"type": "function", "function": {
         "name": "get_stem_activity",
         "description": "When a stem (vocals, drums, bass or other) is "
