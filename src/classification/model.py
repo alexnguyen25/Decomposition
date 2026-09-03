@@ -16,6 +16,7 @@ input (B,1,128,431)
 
 from torch import nn
 
+
 class Model(nn.Module):
     def __init__(self) -> None:
         super().__init__()

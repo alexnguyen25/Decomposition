@@ -73,21 +73,12 @@ def compute_metrics(predictions, labels, masks):
         fp = ((y_pred == 1) & (y_true == 0)).sum()
         fn = ((y_pred == 0) & (y_true == 1)).sum()
 
-        # avoid dividing by zero
-        if tp + fp > 0:
-            precision = tp / (tp + fp)
-        else:
-            precision = 0.0
-
-        if tp + fn > 0:
-            recall = tp / (tp + fn)
-        else:
-            recall = 0.0
-
-        if precision + recall > 0:
-            f1 = 2 * precision * recall / (precision + recall)
-        else:
-            f1 = 0.0
+        # guard every denominator: a class with no predictions and no
+        # positives is scored 0, not a ZeroDivisionError
+        precision = tp / (tp + fp) if tp + fp > 0 else 0.0
+        recall = tp / (tp + fn) if tp + fn > 0 else 0.0
+        f1 = (2 * precision * recall / (precision + recall)
+              if precision + recall > 0 else 0.0)
 
         results.append({
             "class_index": c,

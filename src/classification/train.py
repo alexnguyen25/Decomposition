@@ -1,10 +1,17 @@
-from torch.utils.data import DataLoader
-from src.config import NUM_EPOCHS, OPENMIC_DIR, CACHE_DIR, TRAIN_PARTITION, CHECKPOINT_PATH
-from src.classification.dataset import OpenMICDataset
-from src.classification.model import Model
-
 import torch
 from torch import nn
+from torch.utils.data import DataLoader
+
+from src.classification.dataset import OpenMICDataset
+from src.classification.model import Model
+from src.config import (
+    CACHE_DIR,
+    CHECKPOINT_PATH,
+    NUM_EPOCHS,
+    OPENMIC_DIR,
+    TRAIN_PARTITION,
+)
+
 
 def main():
     dataloader, model, optimizer, loss_fn, device = setup()
@@ -28,7 +35,7 @@ def setup():
     return dataloader, model, optimizer, loss_fn, device
 
 def train(dataloader, model, optimizer, loss_fn, num_epochs, device):
-    for epoch in range(num_epochs):
+    for _epoch in range(num_epochs):
         total_loss = 0
         for batch in dataloader:
             spec, labels, label_mask = [t.to(device) for t in batch]

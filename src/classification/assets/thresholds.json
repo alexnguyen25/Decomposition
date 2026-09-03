@@ -1,0 +1,28 @@
+{
+  "_comment": "Per-class thresholds tuned on the validation split, used ONLY to reproduce the published OpenMIC macro-F1 of 0.8045. Production inference uses a flat CONFIDENCE_THRESHOLD (0.5) \u2014 see README.",
+  "source": "docs/research/2026-07-21-f1-improvement-research.md, experiment E10",
+  "e10_tuned_thresholds": [
+    0.5000000000000002,
+    0.12500000000000003,
+    0.3750000000000001,
+    0.4000000000000001,
+    0.10000000000000002,
+    0.32500000000000007,
+    0.3750000000000001,
+    0.47500000000000014,
+    0.32500000000000007,
+    0.32500000000000007,
+    0.4250000000000001,
+    0.4250000000000001,
+    0.20000000000000007,
+    0.5000000000000002,
+    0.22500000000000003,
+    0.47500000000000014,
+    0.47500000000000014,
+    0.3500000000000001,
+    0.6500000000000002,
+    0.4250000000000001
+  ],
+  "published_macro_f1_at_0.5": 0.7921139969375408,
+  "published_macro_f1_tuned": 0.8044944626362103
+}
