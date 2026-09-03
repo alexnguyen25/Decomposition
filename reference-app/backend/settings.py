@@ -26,7 +26,7 @@ EXAMPLES_DIR = Path(os.environ.get(
 # --- LLM (swappable, OpenAI-compatible) -------------------------------------
 # Local dev default: Ollama. For prod set e.g.
 #   LLM_BASE_URL=https://api.cerebras.ai/v1  LLM_MODEL=llama3.1-8b  LLM_API_KEY=csk-...
-# or Groq: LLM_BASE_URL=https://api.groq.com/openai/v1  LLM_MODEL=llama-3.1-8b-instant
+# or Groq: LLM_BASE_URL=https://api.groq.com/openai/v1  LLM_MODEL=openai/gpt-oss-20b
 # The app works without any LLM (falls back to a template description).
 LLM_BASE_URL = os.environ.get("LLM_BASE_URL", "http://localhost:11434/v1")
 LLM_MODEL = os.environ.get("LLM_MODEL", "llama3.2:3b")

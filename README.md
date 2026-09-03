@@ -7,7 +7,9 @@
 stems, the instruments playing inside them, tempo and key — then chat with an
 agent that can only answer from what the model actually measured.
 
-> **Live demo:** _(add your Vercel URL here after deploying — see [DEPLOY.md](DEPLOY.md))_
+> ### ▶ [**Try it live**](https://decomposition-three.vercel.app)
+>
+> Three precomputed tracks, no signup. Deploy your own: [DEPLOY.md](DEPLOY.md).
 
 Separation is [Demucs](https://github.com/facebookresearch/demucs). Instrument
 recognition is a classifier I trained on [OpenMIC-2018](https://zenodo.org/record/1432913):
@@ -114,7 +116,7 @@ along.
                  └────────────────────────────┬───────────────────────────┘
                                               │ OpenAI-compatible
                                               ▼
-                                        Groq  llama-3.1-8b-instant
+                                        Groq  openai/gpt-oss-20b
 
   ── local only, too heavy for free serverless ──────────────────────────
   audio ─▶ validate ─▶ resample/downmix ─▶ Demucs ─▶ ┬─ vocals ┐

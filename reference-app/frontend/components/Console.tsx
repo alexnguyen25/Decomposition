@@ -164,7 +164,7 @@ export default function Console({
           <button
             onClick={toggle}
             disabled={loading}
-            className="grid h-10 w-10 place-items-center border border-[var(--amber)] text-[var(--amber)] transition-all hover:bg-[var(--amber)] hover:text-black disabled:opacity-40"
+            className="grid h-10 w-10 shrink-0 place-items-center border border-[var(--amber)] text-[var(--amber)] transition-all hover:bg-[var(--amber)] hover:text-black disabled:opacity-40"
             aria-label={playing ? "Pause" : "Play"}
           >
             {playing ? "❚❚" : "▶"}
@@ -209,23 +209,27 @@ export default function Console({
                       return next;
                     })
                   }
-                  className={`h-6 w-7 border text-[10px] transition-colors ${
+                  className={`h-7 w-7 shrink-0 border text-[10px] transition-colors ${
                     muted.has(stem) && !solo
                       ? "border-[#e85d4a] text-[#e85d4a]"
                       : "border-[var(--line)] text-[var(--muted)] hover:text-[var(--text)]"
                   }`}
                   title="mute"
+                  aria-label={`${muted.has(stem) && !solo ? "unmute" : "mute"} ${stem}`}
+                  aria-pressed={muted.has(stem) && !solo}
                 >
                   M
                 </button>
                 <button
                   onClick={() => setSolo(solo === stem ? null : stem)}
-                  className={`h-6 w-7 border text-[10px] transition-colors ${
+                  className={`h-7 w-7 shrink-0 border text-[10px] transition-colors ${
                     solo === stem
                       ? "border-[var(--amber)] text-[var(--amber)]"
                       : "border-[var(--line)] text-[var(--muted)] hover:text-[var(--text)]"
                   }`}
                   title="solo"
+                  aria-label={`${solo === stem ? "unsolo" : "solo"} ${stem}`}
+                  aria-pressed={solo === stem}
                 >
                   S
                 </button>
@@ -241,7 +245,8 @@ export default function Console({
               <a
                 href={result.stems[stem]}
                 download={`${stem}.mp3`}
-                className="shrink-0 text-[10px] text-[var(--muted)] hover:text-[var(--amber)] transition-colors"
+                aria-label={`download ${stem} stem as mp3`}
+                className="grid h-6 w-6 shrink-0 place-items-center text-[10px] text-[var(--muted)] hover:text-[var(--amber)] transition-colors"
               >
                 ↓
               </a>

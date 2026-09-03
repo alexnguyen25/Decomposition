@@ -151,7 +151,7 @@ export default function Chat({ jobId }: { jobId: string }) {
         <button
           type="submit"
           disabled={pending || !input.trim()}
-          className="text-xs uppercase tracking-wider text-[var(--muted)] transition-colors hover:text-[var(--amber)] disabled:opacity-40"
+          className="shrink-0 px-1 py-2 text-xs uppercase tracking-wider text-[var(--muted)] transition-colors hover:text-[var(--amber)] disabled:opacity-40"
         >
           send
         </button>

@@ -54,11 +54,11 @@ Push to `main` and Vercel builds automatically. Then check the three things
 that actually break:
 
 ```bash
-curl -s -o /dev/null -w "%{http_code}\n" https://YOUR-APP.vercel.app/examples/manifest.json
+curl -s -o /dev/null -w "%{http_code}\n" https://decomposition-three.vercel.app/examples/manifest.json
 ```
 
 ```bash
-curl -s -X POST https://YOUR-APP.vercel.app/api/chat/ex_867662 -H "Content-Type: application/json" -d '{"messages":[{"role":"user","content":"what instruments are in this track?"}]}'
+curl -s -X POST https://decomposition-three.vercel.app/api/chat/ex_867662 -H "Content-Type: application/json" -d '{"messages":[{"role":"user","content":"what instruments are in this track?"}]}'
 ```
 
 The chat response must come back with `"grounded": true` and a non-empty
@@ -68,7 +68,7 @@ is the one failure mode worth watching after a provider change.
 Then run the full grounding suite against production:
 
 ```bash
-python evals/run_evals_http.py --base-url https://YOUR-APP.vercel.app --label groq-gpt-oss-20b
+python evals/run_evals_http.py --base-url https://decomposition-three.vercel.app --label groq-gpt-oss-20b
 ```
 
 **Put the number this produces in the README, not the local one.** The
