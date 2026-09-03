@@ -1,8 +1,9 @@
 """
 Source separation via Demucs (HTDemucs and related models).
 
-Runs ``python3 -m demucs.separate`` as a subprocess on a preprocessed audio
-file, then collects the four standard stem WAV paths Demucs writes under
+Runs ``demucs.separate`` as a subprocess **on the current interpreter**
+(``sys.executable``) so it always resolves to the environment this code is
+running in, then collects the four standard stem WAV paths Demucs writes under
 ``<output_dir>/<model>/<track_stem>/``. Intended to run after preprocessing
 (see ``src.preprocessing.processing``) so inputs are normalized clips.
 
@@ -17,9 +18,9 @@ Typical layout::
           other.wav
 """
 
-from pathlib import Path
 import subprocess
-from typing import Dict
+import sys
+from pathlib import Path
 
 from src.utils.exceptions import DemucsFail, DemucsNotFound
 
@@ -28,7 +29,7 @@ def separate(
     file_path: Path,
     output_dir: Path,
     model: str = "htdemucs",
-) -> Dict[str, Path]:
+) -> dict[str, Path]:
     """
     Separate an audio file into stems and return paths to each output WAV.
 
@@ -70,15 +71,18 @@ def _run_demucs(
         model: Model name for ``-n``.
 
     Raises:
-        DemucsFail: On ``CalledProcessError`` (Demucs reported failure).
+        DemucsFail: On ``CalledProcessError``. The exception message carries the
+            tail of Demucs' own stderr — without it the real cause (a missing
+            module, an unreadable file, an OOM) is invisible to the caller.
         DemucsNotFound: On ``FileNotFoundError`` (interpreter or module missing).
 
     Note:
-        Uses ``capture_output=True`` so Demucs stdout/stderr are not printed
-        to the terminal. ``check=True`` turns non-zero exit codes into exceptions.
+        ``sys.executable`` rather than a bare ``"python3"``: the latter resolves
+        through ``PATH``, which on a machine with several Pythons installed can
+        easily be an interpreter that has no Demucs in it.
     """
     command = [
-        "python3",
+        sys.executable,
         "-m",
         "demucs.separate",
         "-n",
@@ -90,17 +94,22 @@ def _run_demucs(
 
     try:
         subprocess.run(command, check=True, capture_output=True)
-    except subprocess.CalledProcessError:
-        raise DemucsFail("The file can't be processed")
-    except FileNotFoundError:
-        raise DemucsNotFound("Demucs can't be run because it's not found")
+    except subprocess.CalledProcessError as error:
+        stderr = (error.stderr or b"").decode("utf-8", "replace").strip()
+        raise DemucsFail(
+            f"Demucs exited {error.returncode}: {stderr[-800:] or '(no stderr)'}"
+        ) from error
+    except FileNotFoundError as error:
+        raise DemucsNotFound(
+            "Demucs can't be run because it's not found"
+        ) from error
 
 
 def _collect_stems(
     output_dir: Path,
     track_name: str,
     model: str,
-) -> Dict[str, Path]:
+) -> dict[str, Path]:
     """
     Build a stem-name → file path map for Demucs output files.
 

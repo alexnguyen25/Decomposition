@@ -31,7 +31,7 @@ from src.preprocessing.processing import (
 def _expected_processed_dir():
     """Return ``data/processed`` path using the same root logic as ``process_audio``."""
     project_root = os.path.dirname(
-        os.path.dirname(os.path.abspath(processing.__file__))
+        os.path.dirname(os.path.dirname(os.path.abspath(processing.__file__)))
     )
     return os.path.join(project_root, "data", "processed")
 
@@ -120,7 +120,7 @@ class TestProcessAudio(unittest.TestCase):
 
         written_path, written_y = (
             mock_write.call_args[0][0],
-            mock_write.call_args.kwargs["y"],
+            mock_write.call_args.kwargs["data"],
         )
         self.assertEqual(written_y.shape, (2, 2000))
         self.assertEqual(mock_write.call_args.kwargs["samplerate"], 44100)
@@ -129,6 +129,56 @@ class TestProcessAudio(unittest.TestCase):
         self.assertEqual(os.path.dirname(written_path), expected_dir)
         self.assertEqual(os.path.basename(written_path), "my_track_processed.wav")
         self.assertEqual(result_path, written_path)
+
+
+class TestProcessAudioRoundTrip(unittest.TestCase):
+    """Unmocked end-to-end test: real file in, real file out.
+
+    WHY this exists alongside the mocked test above. Two bugs lived in
+    ``process_audio`` from Day 3 to Day 17 — ``sf.write(..., y=...)`` (wrong
+    keyword) and a ``project_root`` resolved one level too shallow — and the
+    mocked test could not see either of them, because mocking ``sf.write``
+    asserts only that we *called* it plausibly, never that writing works.
+    Only an unmocked round trip touches the real soundfile call and the real
+    filesystem. Slower, and worth it.
+    """
+
+    def test_process_audio_writes_a_readable_file_at_the_repo_root(self):
+        import shutil
+        import tempfile
+
+        import soundfile as sf
+
+        source = np.zeros((22050,), dtype=np.float32)
+        source[::100] = 0.5                      # non-silent, so nothing is trimmed
+
+        tmp_dir = tempfile.mkdtemp()
+        written = None
+        try:
+            source_path = os.path.join(tmp_dir, "round_trip.wav")
+            sf.write(source_path, data=source, samplerate=22050)
+
+            written = process_audio(source_path)
+
+            # the file must actually exist — a bad sf.write kwarg fails here
+            self.assertTrue(os.path.isfile(written), f"nothing written to {written}")
+
+            back, sr = sf.read(written)
+            self.assertEqual(sr, 44100)
+            self.assertGreater(len(back), 0)
+
+            # repo root, not src/ — computed independently of the production code
+            repo_root = os.path.dirname(
+                os.path.dirname(os.path.dirname(os.path.abspath(processing.__file__)))
+            )
+            self.assertEqual(
+                os.path.dirname(written), os.path.join(repo_root, "data", "processed")
+            )
+            self.assertEqual(os.path.basename(written), "round_trip_processed.wav")
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
+            if written and os.path.isfile(written):
+                os.remove(written)
 
 
 if __name__ == "__main__":

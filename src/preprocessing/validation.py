@@ -8,10 +8,9 @@ corrupt files, and policy violations distinctly.
 """
 
 import os
-
-import librosa
 from pathlib import Path
 
+import librosa
 
 from src.utils.exceptions import CorruptedFile, IncorrectExtension, InvalidLength
 
@@ -100,8 +99,8 @@ def validAudio(file_path: Path) -> None:
 
     try:
         y, sr = librosa.load(file_path, sr=None)
-    except Exception:
-        raise CorruptedFile("The file can't be loaded")
+    except Exception as error:
+        raise CorruptedFile(f"The file can't be loaded: {error}") from error
 
     duration = librosa.get_duration(y=y, sr=sr)
     checkLength(duration)

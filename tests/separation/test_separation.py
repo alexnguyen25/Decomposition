@@ -11,6 +11,7 @@ Run:
 """
 
 import subprocess
+import sys
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -49,7 +50,7 @@ class TestRunDemucs(unittest.TestCase):
 
         mock_run.assert_called_once_with(
             [
-                "python3",
+                sys.executable,
                 "-m",
                 "demucs.separate",
                 "-n",
@@ -65,11 +66,20 @@ class TestRunDemucs(unittest.TestCase):
     @patch("src.separation.separation.subprocess.run")
     def test_run_demucs_called_process_error_raises_demucs_fail(self, mock_run):
         mock_run.side_effect = subprocess.CalledProcessError(
-            returncode=1, cmd=["python3", "-m", "demucs.separate"]
+            returncode=1,
+            cmd=[sys.executable, "-m", "demucs.separate"],
+            stderr=b"ModuleNotFoundError: No module named 'demucs'",
         )
 
-        with self.assertRaises(DemucsFail):
+        with self.assertRaises(DemucsFail) as caught:
             _run_demucs(Path("/tmp/in/bad.wav"), Path("/tmp/out"), "htdemucs")
+
+        # Regression guard: the old code swallowed stderr and raised a generic
+        # "The file can't be processed", which pointed at the audio rather than
+        # the real cause (wrong interpreter, missing module, OOM).
+        message = str(caught.exception)
+        self.assertIn("No module named 'demucs'", message)
+        self.assertIn("1", message)
 
     @patch("src.separation.separation.subprocess.run")
     def test_run_demucs_file_not_found_raises_demucs_not_found(self, mock_run):
