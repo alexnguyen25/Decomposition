@@ -21,10 +21,16 @@ Groq's free tier needs no credit card and supports tool calling.
 1. Sign up at [console.groq.com](https://console.groq.com).
 2. **API Keys → Create API Key.** Copy it.
 
-> Rate limits are enforced per **organization**, not per key. If you reuse this
-> account for another project, both draw from the same 30 req/min — generate a
-> separate key per project so you can revoke one without breaking the other,
-> but know the quota is shared.
+> **The free tier is 60 requests per day**, measured against this project on
+> `openai/gpt-oss-20b` — not the 14,400/day the model-comparison research
+> assumed, and not a per-minute limit. Rate limits are enforced per
+> **organization**, not per key, so a second project on the same account eats
+> the same 60. Generate a separate key per project so you can revoke one
+> without breaking the other, but know the quota is shared.
+>
+> Sixty a day is enough for a demo people click through, and not enough for a
+> demo people hammer. When it runs out, the chat panel says the daily quota is
+> spent and the rest of the page is unaffected.
 
 ## 2. Import the repo into Vercel
 
@@ -71,10 +77,20 @@ Then run the full grounding suite against production:
 python evals/run_evals_http.py --base-url https://decomposition-three.vercel.app --label groq-gpt-oss-20b
 ```
 
-**Put the number this produces in the README, not the local one.** The
+**Expect this to take more than one day on the free tier.** Thirty questions
+at roughly two provider calls each is about sixty requests, which is the entire
+daily allowance, and any chat traffic on the live site comes out of the same
+budget. The harness checkpoints every answer it gets and gives up after three
+consecutive failures, so the workflow is to run the exact same command again
+the next day — it asks only the questions still missing and summarises once
+all thirty are in.
+
+**Put the number it finally produces in the README, not the local one.** The
 committed result (0/30 hallucinations, 2.7 s mean latency) was measured against
 local `llama3.2:3b` via Ollama. Groq runs a different model and may score
-differently — report what it actually does.
+differently — report what it actually does. Do not publish a rate from a
+partial run: the questions are grouped by track, so a run that stops early has
+not seen every track and the subset is biased.
 
 ## 5. Add the URL
 

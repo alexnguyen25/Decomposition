@@ -11,6 +11,8 @@ agent that can only answer from what the model actually measured.
 >
 > Three precomputed tracks, no signup. Deploy your own: [DEPLOY.md](DEPLOY.md).
 
+[![The track console: four separated stems, per-instrument confidences, and a grounded chat panel](docs/images/track.png)](https://decomposition-three.vercel.app/track/ex_867662)
+
 Separation is [Demucs](https://github.com/facebookresearch/demucs). Instrument
 recognition is a classifier I trained on [OpenMIC-2018](https://zenodo.org/record/1432913):
 frozen [BEATs](https://arxiv.org/abs/2212.09058) embeddings plus a 20-way MLP head,
@@ -89,18 +91,35 @@ on the full 5,085-clip test set (0.7915 vs 0.8045), which is sample noise, not a
 real ordering. And `gemini-pro-latest` only ever ran on 50 of the 100 clips
 (0.569 on its own subset), so it is left out rather than compared unevenly.
 
-### Chat agent grounding (30 scripted questions)
+### Chat agent grounding (30 scripted questions, local `llama3.2:3b`)
 
 | | |
 |---|---|
 | Hallucination rate | **0/30** |
 | Factual · temporal · trap · out-of-scope | 12/12 · 6/6 · 6/6 · 6/6 |
-| Mean latency | 2.7 s (local `llama3.2:3b`) |
+| Mean latency | 2.7 s |
 
 Reproduce: `python evals/run_evals_http.py --base-url http://localhost:3002`.
 "Trap" questions ask leading questions about instruments that aren't there
 ("how prominent is the saxophone?"); passing means the agent declines to play
 along.
+
+**This number is measured locally, and that is a limitation, not a
+preference.** The deployed site talks to Groq, and Groq's free tier allows 60
+requests per day for the whole project. One eval question costs about two
+provider calls, so a 30-question run does not fit inside a single day's
+budget — the first attempt against production reached question 17 and then hit
+the wall. The harness now checkpoints answers and resumes, so a production run
+can be completed across several days, but no full production figure is
+published here yet, and the partial run is deliberately not scored: 17 of 30
+questions is a biased subset (it never reaches the third track), and a rate
+computed over it would be worse than no rate at all.
+
+What the partial run does establish is that the agent works against Groq —
+all 17 questions that completed passed, across all four categories.
+
+The same 60/day ceiling applies to the live demo: once a day's chat quota is
+spent, the chat panel says so and everything else on the page keeps working.
 
 ---
 
@@ -203,6 +222,9 @@ the ones that didn't work — those were the informative ones.
 - The chat agent is grounded, not omniscient — it can only report what the
   classifier detected, and the classifier misses things.
 - The deployed demo analyses three precomputed tracks. Your own audio runs locally.
+- Chat on the live demo is capped at 60 messages a day in total, across
+  everyone, by the LLM provider's free tier. When it runs out the page says
+  so and everything else still works.
 
 ## Layout
 
