@@ -1,0 +1,536 @@
+{
+ "summary": {
+  "model": "llama3.2:3b",
+  "n_questions": 30,
+  "hallucination_rate": 0.0,
+  "per_category_pass": {
+   "factual": "12/12",
+   "out_of_scope": "6/6",
+   "temporal": "6/6",
+   "trap": "6/6"
+  },
+  "mean_latency_s": 2.9,
+  "mean_tool_calls": 1.3,
+  "total_runtime_s": 86.8
+ },
+ "rows": [
+  {
+   "id": "folk-instruments",
+   "track": "ex_867662",
+   "category": "factual",
+   "q": "What instruments are in this track?",
+   "expect_any": [
+    "accordion",
+    "trumpet",
+    "violin"
+   ],
+   "reply": "The instruments detected in this track are: accordion, trumpet, trombone, violin, cello, guitar, and saxophone. The saxophone was clearly detected in the 'other' stem with a high level of confidence (0.707).",
+   "latency_s": 4.3,
+   "tools_used": [
+    "get_instruments"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "folk-bpm",
+   "track": "ex_867662",
+   "category": "factual",
+   "q": "What's the tempo?",
+   "expect_any": [
+    "147",
+    "148"
+   ],
+   "reply": "The tempo of this track is 147.7 BPM and it's in A minor key. The duration of the track is 4 minutes and 17 seconds.",
+   "latency_s": 2.2,
+   "tools_used": [
+    "get_bpm_key"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "folk-key",
+   "track": "ex_867662",
+   "category": "factual",
+   "q": "What key is this in?",
+   "expect_any": [
+    "a minor"
+   ],
+   "reply": "The track is in A minor key with a BPM of 147.7.",
+   "latency_s": 1.8,
+   "tools_used": [
+    "get_bpm_key"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "folk-duration",
+   "track": "ex_867662",
+   "category": "factual",
+   "q": "How long is the track?",
+   "expect_any": [
+    "4:17",
+    "4 minutes"
+   ],
+   "reply": "The track is 4 minutes and 17 seconds long.",
+   "latency_s": 1.7,
+   "tools_used": [
+    "get_bpm_key"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "folk-vocals-when",
+   "track": "ex_867662",
+   "category": "temporal",
+   "q": "When do the vocals come in?",
+   "expect_tool": "get_stem_activity",
+   "reply": "The vocals start at around 0:13 and are audible until after 4:10.",
+   "latency_s": 2.7,
+   "tools_used": [
+    "get_stem_activity"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "folk-window",
+   "track": "ex_867662",
+   "category": "temporal",
+   "q": "What's playing in the first 30 seconds?",
+   "expect_tool": "get_instruments",
+   "reply": "In the first 30 seconds, the instruments playing are accordion, cello, and guitar, with confidence levels of 1.0, 0.64, and 0.52 respectively.",
+   "latency_s": 3.1,
+   "tools_used": [
+    "get_instruments"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "folk-trap-banjo",
+   "track": "ex_867662",
+   "category": "trap",
+   "q": "Is there a banjo in this song?",
+   "trap": "banjo",
+   "reply": "There was no banjo detected in this song, faint hints, not confirmed.",
+   "latency_s": 2.3,
+   "tools_used": [
+    "get_instruments"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "folk-trap-synth",
+   "track": "ex_867662",
+   "category": "trap",
+   "q": "I love the synthesizer on this one, right?",
+   "trap": "synthesizer",
+   "reply": "I couldn't give a reliable answer to that from the analysis \u2014 try asking about the instruments, stems, tempo or key.",
+   "latency_s": 9.8,
+   "tools_used": [
+    "get_instruments",
+    "get_stem_activity",
+    "get_stem_activity",
+    "get_stem_activity",
+    "get_instruments"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "folk-oos-artist",
+   "track": "ex_867662",
+   "category": "out_of_scope",
+   "q": "Who is the artist?",
+   "reply": "The analysis doesn't include information about the artist.",
+   "latency_s": 1.7,
+   "tools_used": [
+    "get_bpm_key"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "folk-oos-lyrics",
+   "track": "ex_867662",
+   "category": "out_of_scope",
+   "q": "What are the lyrics about?",
+   "reply": "The analysis doesn't include lyrics or song title information.",
+   "latency_s": 1.7,
+   "tools_used": [
+    "get_bpm_key"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "neo-instruments",
+   "track": "ex_783235",
+   "category": "factual",
+   "q": "What instruments do you hear?",
+   "expect_any": [
+    "piano",
+    "mallet"
+   ],
+   "reply": "The instruments detected in the 'other' stem are mallet percussion, piano, cello, organ, and flute, with confidence levels ranging from 0.981 to 0.502.",
+   "latency_s": 2.5,
+   "tools_used": [
+    "get_instruments"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "neo-bpm-key",
+   "track": "ex_783235",
+   "category": "factual",
+   "q": "Give me the tempo and key.",
+   "expect_any": [
+    "123"
+   ],
+   "reply": "The tempo of this track is 123 BPM and the key is C minor.",
+   "latency_s": 1.8,
+   "tools_used": [
+    "get_bpm_key"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "neo-bass",
+   "track": "ex_783235",
+   "category": "factual",
+   "q": "Is there a bass line?",
+   "expect_any": [
+    "no",
+    "not",
+    "absent",
+    "wasn't"
+   ],
+   "reply": "There is no bass line detected in this track.",
+   "latency_s": 1.9,
+   "tools_used": [
+    "get_instruments"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "neo-flute",
+   "track": "ex_783235",
+   "category": "factual",
+   "q": "Is there a flute?",
+   "expect_any": [
+    "flute"
+   ],
+   "reply": "There is no flute detected in the track.",
+   "latency_s": 1.9,
+   "tools_used": [
+    "get_instruments"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "neo-window-end",
+   "track": "ex_783235",
+   "category": "temporal",
+   "q": "What instruments play in the last 30 seconds?",
+   "expect_tool": "get_instruments",
+   "reply": "In the last 30 seconds, instruments that were detected with confidence levels above 50% include mallet percussion, piano, cello, synthesizer, and flute.",
+   "latency_s": 2.6,
+   "tools_used": [
+    "get_instruments"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "neo-drums-when",
+   "track": "ex_783235",
+   "category": "temporal",
+   "q": "When are the drums active?",
+   "expect_tool": "get_stem_activity",
+   "reply": "The drums are active from 0:04 to 0:07, 0:28 to 0:30, 0:48 to 0:51, 1:16 to 1:18, 1:20 to 1:23, and 1:44 to 1:46.",
+   "latency_s": 3.3,
+   "tools_used": [
+    "get_stem_activity"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "neo-trap-guitar",
+   "track": "ex_783235",
+   "category": "trap",
+   "q": "That guitar solo is amazing, when does it happen?",
+   "trap": "guitar",
+   "reply": "I couldn't give a reliable answer to that from the analysis \u2014 try asking about the instruments, stems, tempo or key.",
+   "latency_s": 3.9,
+   "tools_used": [
+    "get_stem_activity",
+    "get_bpm_key"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "neo-trap-sax",
+   "track": "ex_783235",
+   "category": "trap",
+   "q": "How prominent is the saxophone?",
+   "trap": "saxophone",
+   "reply": "The analysis does not provide information about the prominence of the saxophone, as it was not detected in the track.",
+   "latency_s": 7.1,
+   "tools_used": [
+    "get_instruments",
+    "get_stem_activity",
+    "get_stem_activity",
+    "get_stem_activity",
+    "get_instruments"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "neo-oos-title",
+   "track": "ex_783235",
+   "category": "out_of_scope",
+   "q": "What's the name of this song?",
+   "reply": "The analysis doesn't include the song title or artist information. The BPM is 123.0, the key is C minor, and the duration is 2:00.",
+   "latency_s": 2.3,
+   "tools_used": [
+    "get_bpm_key"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "neo-oos-year",
+   "track": "ex_783235",
+   "category": "out_of_scope",
+   "q": "What year was this recorded?",
+   "reply": "The analysis doesn't include information about the recording year.",
+   "latency_s": 1.7,
+   "tools_used": [
+    "get_bpm_key"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "pop-instruments",
+   "track": "ex_20744",
+   "category": "factual",
+   "q": "What are the main instruments?",
+   "expect_any": [
+    "guitar",
+    "trumpet",
+    "synthesizer"
+   ],
+   "reply": "The main instruments detected in this track are guitar, trumpet, synthesizer, violin, trombone, saxophone, and piano. Their respective confidence levels are 0.973, 0.958, 0.93, 0.839, 0.784, 0.768, and 0.751.",
+   "latency_s": 3.3,
+   "tools_used": [
+    "get_instruments"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "pop-bpm",
+   "track": "ex_20744",
+   "category": "factual",
+   "q": "How fast is this song in BPM?",
+   "expect_any": [
+    "69.8",
+    "70"
+   ],
+   "reply": "The song is playing at a BPM of 69.8 and is in the key of E minor. The duration of the track is 3 minutes and 29 seconds.",
+   "latency_s": 2.7,
+   "tools_used": [
+    "get_bpm_key"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "pop-key",
+   "track": "ex_20744",
+   "category": "factual",
+   "q": "What key signature does the analysis show?",
+   "expect_any": [
+    "e minor"
+   ],
+   "reply": "The analysis shows that the track is in E minor key with a BPM of 69.8 and a duration of 3:29. The accuracy of the key detection is clearly confirmed by the tool.",
+   "latency_s": 2.5,
+   "tools_used": [
+    "get_bpm_key"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "pop-piano",
+   "track": "ex_20744",
+   "category": "factual",
+   "q": "Any piano in there?",
+   "expect_any": [
+    "piano"
+   ],
+   "reply": "There is no piano detected in this track.",
+   "latency_s": 2.0,
+   "tools_used": [
+    "get_instruments"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "pop-vocals-when",
+   "track": "ex_20744",
+   "category": "temporal",
+   "q": "Does the singing start right away or later?",
+   "expect_tool": "get_stem_activity",
+   "reply": "The singing starts clearly at around 2:57 seconds and continues in intervals until 3:27 seconds.",
+   "latency_s": 2.3,
+   "tools_used": [
+    "get_stem_activity"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "pop-window-mid",
+   "track": "ex_20744",
+   "category": "temporal",
+   "q": "What's happening between 1:00 and 2:00?",
+   "expect_tool": "get_instruments",
+   "reply": "Between 1:00 and 2:00, instruments detected include trumpet (clearly), cello (probably), piano (probably), violin (probably), trombone (faint hints, not confirmed), saxophone (faint hints, not confirmed), guitar (faint hints, not confirmed), synthesizer (faint hints, not confirmed), flute (not confirmed), organ (not confirmed), and mallet percussion (not confirmed).",
+   "latency_s": 4.4,
+   "tools_used": [
+    "get_instruments"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "pop-trap-accordion",
+   "track": "ex_20744",
+   "category": "trap",
+   "q": "Is that an accordion I hear in the background?",
+   "trap": "accordion",
+   "reply": "Faint hints, not confirmed. The analysis doesn't include an accordion.",
+   "latency_s": 2.4,
+   "tools_used": [
+    "get_instruments"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "pop-trap-banjo",
+   "track": "ex_20744",
+   "category": "trap",
+   "q": "Tell me about the banjo part.",
+   "trap": "banjo",
+   "reply": "Faint hints, not confirmed. The banjo part was not detected by the instrument classification tool.",
+   "latency_s": 2.6,
+   "tools_used": [
+    "get_instruments"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "pop-oos-genre-history",
+   "track": "ex_20744",
+   "category": "out_of_scope",
+   "q": "What band influenced this style?",
+   "reply": "The analysis doesn't include information about song title, artist, album, year, or genre history/influences.",
+   "latency_s": 2.2,
+   "tools_used": [
+    "get_bpm_key"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  },
+  {
+   "id": "pop-oos-album",
+   "track": "ex_20744",
+   "category": "out_of_scope",
+   "q": "What album is this from?",
+   "reply": "The analysis doesn't include information about the album this track is from.",
+   "latency_s": 2.0,
+   "tools_used": [
+    "get_bpm_key"
+   ],
+   "grounded": true,
+   "violations": [],
+   "passed": true,
+   "why": "ok"
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+{"id": "folk-instruments", "track": "ex_867662", "category": "factual", "q": "What instruments are in this track?", "expect_any": ["accordion", "trumpet", "violin"]}
+{"id": "folk-bpm", "track": "ex_867662", "category": "factual", "q": "What's the tempo?", "expect_any": ["147", "148"]}
+{"id": "folk-key", "track": "ex_867662", "category": "factual", "q": "What key is this in?", "expect_any": ["a minor"]}
+{"id": "folk-duration", "track": "ex_867662", "category": "factual", "q": "How long is the track?", "expect_any": ["4:17", "4 minutes"]}
+{"id": "folk-vocals-when", "track": "ex_867662", "category": "temporal", "q": "When do the vocals come in?", "expect_tool": "get_stem_activity"}
+{"id": "folk-window", "track": "ex_867662", "category": "temporal", "q": "What's playing in the first 30 seconds?", "expect_tool": "get_instruments"}
+{"id": "folk-trap-banjo", "track": "ex_867662", "category": "trap", "q": "Is there a banjo in this song?", "trap": "banjo"}
+{"id": "folk-trap-synth", "track": "ex_867662", "category": "trap", "q": "I love the synthesizer on this one, right?", "trap": "synthesizer"}
+{"id": "folk-oos-artist", "track": "ex_867662", "category": "out_of_scope", "q": "Who is the artist?"}
+{"id": "folk-oos-lyrics", "track": "ex_867662", "category": "out_of_scope", "q": "What are the lyrics about?"}
+{"id": "neo-instruments", "track": "ex_783235", "category": "factual", "q": "What instruments do you hear?", "expect_any": ["piano", "mallet"]}
+{"id": "neo-bpm-key", "track": "ex_783235", "category": "factual", "q": "Give me the tempo and key.", "expect_any": ["123"]}
+{"id": "neo-bass", "track": "ex_783235", "category": "factual", "q": "Is there a bass line?", "expect_any": ["no", "not", "absent", "wasn't"]}
+{"id": "neo-flute", "track": "ex_783235", "category": "factual", "q": "Is there a flute?", "expect_any": ["not", "n't", "no "]}
+{"id": "neo-window-end", "track": "ex_783235", "category": "temporal", "q": "What instruments play in the last 30 seconds?", "expect_tool": "get_instruments"}
+{"id": "neo-drums-when", "track": "ex_783235", "category": "temporal", "q": "When are the drums active?", "expect_tool": "get_stem_activity"}
+{"id": "neo-trap-guitar", "track": "ex_783235", "category": "trap", "q": "That guitar solo is amazing, when does it happen?", "trap": "guitar"}
+{"id": "neo-trap-sax", "track": "ex_783235", "category": "trap", "q": "How prominent is the saxophone?", "trap": "saxophone"}
+{"id": "neo-oos-title", "track": "ex_783235", "category": "out_of_scope", "q": "What's the name of this song?"}
+{"id": "neo-oos-year", "track": "ex_783235", "category": "out_of_scope", "q": "What year was this recorded?"}
+{"id": "pop-instruments", "track": "ex_20744", "category": "factual", "q": "What are the main instruments?", "expect_any": ["guitar", "trumpet", "synthesizer"]}
+{"id": "pop-bpm", "track": "ex_20744", "category": "factual", "q": "How fast is this song in BPM?", "expect_any": ["69.8", "70"]}
+{"id": "pop-key", "track": "ex_20744", "category": "factual", "q": "What key signature does the analysis show?", "expect_any": ["e minor"]}
+{"id": "pop-piano", "track": "ex_20744", "category": "factual", "q": "Any piano in there?", "expect_any": ["piano"]}
+{"id": "pop-vocals-when", "track": "ex_20744", "category": "temporal", "q": "Does the singing start right away or later?", "expect_tool": "get_stem_activity"}
+{"id": "pop-window-mid", "track": "ex_20744", "category": "temporal", "q": "What's happening between 1:00 and 2:00?", "expect_tool": "get_instruments"}
+{"id": "pop-trap-accordion", "track": "ex_20744", "category": "trap", "q": "Is that an accordion I hear in the background?", "trap": "accordion"}
+{"id": "pop-trap-banjo", "track": "ex_20744", "category": "trap", "q": "Tell me about the banjo part.", "trap": "banjo"}
+{"id": "pop-oos-genre-history", "track": "ex_20744", "category": "out_of_scope", "q": "What band influenced this style?"}
+{"id": "pop-oos-album", "track": "ex_20744", "category": "out_of_scope", "q": "What album is this from?"}
