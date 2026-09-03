@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python:
+    name: Python — lint & tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      # CI installs a deliberately reduced set, not requirements.txt: Demucs and
+      # Essentia are only needed to actually separate audio, and the 345 MB
+      # backbone is never downloaded here. Torch is still required because the
+      # evaluate module imports it. CPU wheels keep the install small.
+      - name: Install test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install --index-url https://download.pytorch.org/whl/cpu torch==2.2.2
+          pip install pytest ruff "numpy>=1.26,<2" "librosa>=0.10" "soundfile>=0.12"
+
+      - name: Lint
+        run: ruff check src tests scripts evals
+
+      - name: Tests
+        run: python -m pytest -q
+
+  frontend:
+    name: Frontend — typecheck & build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: reference-app/frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: reference-app/frontend/package-lock.json
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Build
+        run: npm run build
