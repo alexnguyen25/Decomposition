@@ -10,8 +10,13 @@ Total cost: **$0**, no card anywhere.
 
 ## 1. Get a Groq API key
 
-Groq's free tier needs no credit card: 30 requests/minute, 14,400/day,
-500,000 tokens/day on `llama-3.1-8b-instant`, with tool calling.
+Groq's free tier needs no credit card and supports tool calling.
+
+> **Check the model ID before you deploy.** Groq retires models on a few
+> months' notice — `llama-3.1-8b-instant` was shut down on 2026-08-16 and
+> this project was briefly configured for it. The current list lives at
+> [console.groq.com/docs/deprecations](https://console.groq.com/docs/deprecations).
+> A dead model ID fails as "the chat model isn't reachable" in the UI.
 
 1. Sign up at [console.groq.com](https://console.groq.com).
 2. **API Keys → Create API Key.** Copy it.
@@ -37,7 +42,7 @@ Groq's free tier needs no credit card: 30 requests/minute, 14,400/day,
 |---|---|
 | `LLM_API_KEY` | your Groq key |
 | `LLM_BASE_URL` | `https://api.groq.com/openai/v1` |
-| `LLM_MODEL` | `llama-3.1-8b-instant` |
+| `LLM_MODEL` | `openai/gpt-oss-20b` |
 
 Do **not** set `BACKEND_ORIGIN` or `NEXT_PUBLIC_UPLOAD_ENABLED` in production.
 Leaving them unset is what makes the site serve examples statically and show
@@ -63,7 +68,7 @@ is the one failure mode worth watching after a provider change.
 Then run the full grounding suite against production:
 
 ```bash
-python evals/run_evals_http.py --base-url https://YOUR-APP.vercel.app --label groq-llama-3.1-8b
+python evals/run_evals_http.py --base-url https://YOUR-APP.vercel.app --label groq-gpt-oss-20b
 ```
 
 **Put the number this produces in the README, not the local one.** The
@@ -85,7 +90,7 @@ changing provider is two environment variables and a redeploy.
 
 | | `LLM_BASE_URL` | `LLM_MODEL` |
 |---|---|---|
-| Groq | `https://api.groq.com/openai/v1` | `llama-3.1-8b-instant` |
+| Groq | `https://api.groq.com/openai/v1` | `openai/gpt-oss-20b` |
 | OpenRouter | `https://openrouter.ai/api/v1` | any `:free` model with tool support |
 | Ollama (local) | `http://localhost:11434/v1` | `llama3.2:3b` |
 

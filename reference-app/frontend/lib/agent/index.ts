@@ -14,7 +14,10 @@ import { TOOLS_SPEC, runTool } from "./tools";
 import type { Analysis, ChatMessage, ChatResult, ToolOutput } from "./types";
 
 const BASE_URL = process.env.LLM_BASE_URL ?? "https://api.groq.com/openai/v1";
-const MODEL = process.env.LLM_MODEL ?? "llama-3.1-8b-instant";
+// Groq shut down llama-3.1-8b-instant on 2026-08-16; gpt-oss-20b is their
+// named replacement and supports tool calling. Model IDs churn — check
+// https://console.groq.com/docs/deprecations before trusting this default.
+const MODEL = process.env.LLM_MODEL ?? "openai/gpt-oss-20b";
 const API_KEY = process.env.LLM_API_KEY ?? "";
 const TIMEOUT_MS = Number(process.env.LLM_TIMEOUT_S ?? "60") * 1000;
 /** Small models occasionally loop on tools; this is the circuit breaker. */
@@ -78,7 +81,13 @@ async function callModel(messages: ProviderMessage[]): Promise<ProviderMessage> 
         tools: TOOLS_SPEC,
       }),
     });
-    if (!response.ok) throw new Error(`provider returned ${response.status}`);
+    if (!response.ok) {
+      // Include the provider's own message: a bare status code cannot tell a
+      // dead model ID from a bad key from a rate limit, and this failure is
+      // invisible in the browser by design.
+      const detail = await response.text().catch(() => "");
+      throw new Error(`provider returned ${response.status}: ${detail.slice(0, 500)}`);
+    }
     const data = await response.json();
     return data.choices[0].message as ProviderMessage;
   } finally {
@@ -105,8 +114,10 @@ export async function chat(
     let message: ProviderMessage;
     try {
       message = await callModel(conversation);
-    } catch {
-      // Never surface a stack trace to a visitor: degrade to an honest line.
+    } catch (error) {
+      // Visitors get an honest one-liner, never a stack trace — but the cause
+      // has to reach the server logs or a misconfigured model is undebuggable.
+      console.error("[chat] provider call failed:", error);
       return { reply: UNREACHABLE, grounded: true, trace };
     }
 

@@ -1,5 +1,8 @@
 # Decomposition
 
+[![CI](https://github.com/alexnguyen25/Decomposition/actions/workflows/ci.yml/badge.svg)](https://github.com/alexnguyen25/Decomposition/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 **Pull a song apart and ask it questions.** Upload audio, get four isolated
 stems, the instruments playing inside them, tempo and key — then chat with an
 agent that can only answer from what the model actually measured.
