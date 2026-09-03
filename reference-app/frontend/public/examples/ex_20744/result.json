@@ -1,0 +1,72 @@
+{
+  "duration_s": 209.6,
+  "bpm": 69.8,
+  "key": "E minor",
+  "presence": {
+    "vocals": true,
+    "drums": true,
+    "bass": true
+  },
+  "instruments": [
+    {
+      "name": "guitar",
+      "confidence": 0.973
+    },
+    {
+      "name": "trumpet",
+      "confidence": 0.958
+    },
+    {
+      "name": "synthesizer",
+      "confidence": 0.93
+    },
+    {
+      "name": "violin",
+      "confidence": 0.839
+    },
+    {
+      "name": "trombone",
+      "confidence": 0.784
+    },
+    {
+      "name": "saxophone",
+      "confidence": 0.768
+    },
+    {
+      "name": "piano",
+      "confidence": 0.751
+    },
+    {
+      "name": "cello",
+      "confidence": 0.577
+    },
+    {
+      "name": "organ",
+      "confidence": 0.556
+    }
+  ],
+  "stems": {
+    "vocals": "/api/files/ex_20744/vocals.mp3",
+    "drums": "/api/files/ex_20744/drums.mp3",
+    "bass": "/api/files/ex_20744/bass.mp3",
+    "other": "/api/files/ex_20744/other.mp3"
+  },
+  "description": {
+    "blurb": "This melancholic E minor track features a mix of organic and electronic elements, with a steady 69.8 BPM tempo that creates a sense of longing. The vocals are present but subtle, accompanied by a clear guitar presence and hints of trumpet and synthesizer. A gentle energy pervades the song.",
+    "genre": "Indie/Alternative",
+    "moods": [
+      "melancholic",
+      "contemplative"
+    ],
+    "energy": "low",
+    "mentioned_instruments": [
+      "guitar",
+      "trumpet",
+      "synthesizer"
+    ],
+    "source": "llama3.2:3b"
+  },
+  "timings_s": {
+    "total": 2184.1
+  }
+}

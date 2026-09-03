@@ -1,0 +1,55 @@
+{
+  "duration_s": 120.1,
+  "bpm": 123.0,
+  "key": "C minor",
+  "presence": {
+    "vocals": true,
+    "drums": true,
+    "bass": false
+  },
+  "instruments": [
+    {
+      "name": "mallet_percussion",
+      "confidence": 0.981
+    },
+    {
+      "name": "piano",
+      "confidence": 0.975
+    },
+    {
+      "name": "cello",
+      "confidence": 0.742
+    },
+    {
+      "name": "organ",
+      "confidence": 0.641
+    },
+    {
+      "name": "flute",
+      "confidence": 0.502
+    }
+  ],
+  "stems": {
+    "vocals": "/api/files/ex_783235/vocals.mp3",
+    "drums": "/api/files/ex_783235/drums.mp3",
+    "bass": "/api/files/ex_783235/bass.mp3",
+    "other": "/api/files/ex_783235/other.mp3"
+  },
+  "description": {
+    "blurb": "An up-tempo track in C minor, featuring mallet percussion, piano, cello, organ and flute.",
+    "genre": null,
+    "moods": [],
+    "energy": null,
+    "mentioned_instruments": [
+      "mallet_percussion",
+      "piano",
+      "cello",
+      "organ",
+      "flute"
+    ],
+    "source": "template"
+  },
+  "timings_s": {
+    "total": 2149.0
+  }
+}

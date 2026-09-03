@@ -1,0 +1,68 @@
+{
+  "duration_s": 257.3,
+  "bpm": 147.7,
+  "key": "A minor",
+  "presence": {
+    "vocals": true,
+    "drums": true,
+    "bass": true
+  },
+  "instruments": [
+    {
+      "name": "accordion",
+      "confidence": 0.993
+    },
+    {
+      "name": "trumpet",
+      "confidence": 0.958
+    },
+    {
+      "name": "trombone",
+      "confidence": 0.87
+    },
+    {
+      "name": "violin",
+      "confidence": 0.855
+    },
+    {
+      "name": "cello",
+      "confidence": 0.851
+    },
+    {
+      "name": "guitar",
+      "confidence": 0.843
+    },
+    {
+      "name": "saxophone",
+      "confidence": 0.707
+    }
+  ],
+  "stems": {
+    "vocals": "/api/files/ex_867662/vocals.mp3",
+    "drums": "/api/files/ex_867662/drums.mp3",
+    "bass": "/api/files/ex_867662/bass.mp3",
+    "other": "/api/files/ex_867662/other.mp3"
+  },
+  "description": {
+    "blurb": "A haunting A minor track with a steady, driving tempo feel at 147.7 BPM. The presence of vocals, drums, and bass provides a solid foundation, while instruments like accordion, trumpet, trombone, violin, cello, guitar, and saxophone add depth and complexity.",
+    "genre": "Indie/Alternative",
+    "moods": [
+      "melancholic",
+      "introspective"
+    ],
+    "energy": "low",
+    "mentioned_instruments": [
+      "accordion",
+      "trumpet",
+      "trombone",
+      "violin",
+      "cello",
+      "guitar",
+      "saxophone"
+    ],
+    "source": "llama3.2:3b"
+  },
+  "timings_s": {
+    "total": 1432.1
+  }
+}

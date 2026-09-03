@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* ── Studio-console theme ──────────────────────────────────────────────
+   Near-black chassis, warm VU-meter amber, per-stem channel colors like a
+   DAW. Everything data-adjacent renders in mono; display type is Bricolage
+   Grotesque (set via next/font in layout.tsx). */
+:root {
+  --bg: #0b0b0e;
+  --panel: #131318;
+  --panel-2: #1a1a21;
+  --line: #26262e;
+  --text: #e8e4da;
+  --muted: #8d8a80;
+  --amber: #f5a623;
+  --amber-dim: #6b4a12;
+  /* per-stem channel colors */
+  --c-vocals: #f5a623;
+  --c-drums: #e85d4a;
+  --c-bass: #9d7bff;
+  --c-other: #3ecfb2;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  /* faint phosphor grid, like a rack unit's back panel */
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(245, 166, 35, 0.08), transparent),
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(255,255,255,0.015) 31px 32px);
+}
+
+/* grain overlay for depth */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.led {
+  box-shadow: 0 0 6px currentColor, 0 0 1px currentColor;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+@keyframes eq {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+.eqbar { animation: eq 0.9s ease-in-out infinite; transform-origin: bottom; }
+
+@keyframes blink { 50% { opacity: 0.25; } }
+.blink { animation: blink 1.2s steps(1) infinite; }
